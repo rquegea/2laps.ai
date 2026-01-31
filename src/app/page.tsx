@@ -9,7 +9,7 @@ export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [resizeStart, setResizeStart] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  const [resizeStart, setResizeStart] = useState({ x: 0, y: 0, width: 0, height: 0, initialX: 0, initialY: 0 });
   const windowRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +46,9 @@ export default function Home() {
       x: e.clientX,
       y: e.clientY,
       width: rect?.width || 0,
-      height: rect?.height || 0
+      height: rect?.height || 0,
+      initialX: position.x,
+      initialY: position.y
     });
   };
 
@@ -54,36 +56,70 @@ export default function Home() {
     if (isDragging && windowRef.current && containerRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const windowRect = windowRef.current.getBoundingClientRect();
-      
+
       let newX = e.clientX - dragStart.x;
       let newY = e.clientY - dragStart.y;
-      
-      const maxX = containerRect.width / 2 - windowRect.width / 2;
-      const minX = -containerRect.width / 2 + windowRect.width / 2;
-      const maxY = containerRect.height / 2 - windowRect.height / 2;
-      const minY = -containerRect.height / 2 + windowRect.height / 2;
-      
+
+      // Calcular límites sin margen de la sombra - la ventana puede llegar a todos los bordes
+      const maxX = (containerRect.width / 2) - (windowRect.width / 2);
+      const minX = -(containerRect.width / 2) + (windowRect.width / 2);
+      const maxY = (containerRect.height / 2) - (windowRect.height / 2);
+      const minY = -(containerRect.height / 2) + (windowRect.height / 2);
+
       newX = Math.max(minX, Math.min(maxX, newX));
       newY = Math.max(minY, Math.min(maxY, newY));
-      
+
       setPosition({ x: newX, y: newY });
     }
 
     if (isResizing && windowRef.current && containerRef.current) {
       const deltaX = e.clientX - resizeStart.x;
       const deltaY = e.clientY - resizeStart.y;
-      
-      const newWidth = Math.max(300, resizeStart.width + deltaX);
-      const newHeight = Math.max(200, resizeStart.height + deltaY);
-      
-      // Limitar al tamaño del contenedor
+
+      let newWidth = Math.max(300, resizeStart.width + deltaX);
+      let newHeight = Math.max(200, resizeStart.height + deltaY);
+
+      // Calcular la nueva posición compensada
+      const deltaWidth = newWidth - resizeStart.width;
+      const deltaHeight = newHeight - resizeStart.height;
+      const newX = resizeStart.initialX + (deltaWidth / 2);
+      const newY = resizeStart.initialY + (deltaHeight / 2);
+
+      // Calcular las coordenadas futuras de los bordes de la ventana
       const containerRect = containerRef.current.getBoundingClientRect();
-      const maxWidth = containerRect.width * 0.95;
-      const maxHeight = containerRect.height * 0.95;
-      
+      const futureLeft = (containerRect.width / 2) + newX - (newWidth / 2);
+      const futureRight = (containerRect.width / 2) + newX + (newWidth / 2);
+      const futureTop = (containerRect.height / 2) + newY - (newHeight / 2);
+      const futureBottom = (containerRect.height / 2) + newY + (newHeight / 2);
+
+      // Aplicar límites estrictos sin margen de la sombra - la ventana puede llegar a todos los bordes
+      const containerLeft = 0;
+      const containerRight = containerRect.width;
+      const containerTop = 0;
+      const containerBottom = containerRect.height;
+
+      // Si el borde derecho se sale del límite, limitar el ancho
+      if (futureRight > containerRight) {
+        const maxWidthFromRight = containerRight - futureLeft;
+        newWidth = Math.max(300, maxWidthFromRight);
+      }
+
+      // Si el borde inferior se sale del límite, limitar el alto
+      if (futureBottom > containerBottom) {
+        const maxHeightFromBottom = containerBottom - futureTop;
+        newHeight = Math.max(200, maxHeightFromBottom);
+      }
+
+      // Recalcular la posición compensada con el nuevo tamaño limitado
+      const finalDeltaWidth = newWidth - resizeStart.width;
+      const finalDeltaHeight = newHeight - resizeStart.height;
+      const finalX = resizeStart.initialX + (finalDeltaWidth / 2);
+      const finalY = resizeStart.initialY + (finalDeltaHeight / 2);
+
+      setPosition({ x: finalX, y: finalY });
       setSize({
-        width: Math.min(newWidth, maxWidth),
-        height: Math.min(newHeight, maxHeight)
+        width: newWidth,
+        height: newHeight
       });
     }
   };
@@ -131,9 +167,9 @@ export default function Home() {
           
           {/* Segundo contenedor - imagen destacada con ventana flotante */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
-            <div 
+            <div
               ref={containerRef}
-              className="w-full relative aspect-[9/16] md:aspect-video"
+              className="w-full relative aspect-[9/16] md:aspect-video overflow-visible"
             >
               <img
                 src="/resources/oceano-abstracto-3059.webp"
