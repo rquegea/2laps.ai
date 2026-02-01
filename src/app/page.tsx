@@ -101,21 +101,22 @@ export default function Home() {
           <SocialProof />
 
           {/* Nueva Sección - Strategic Reasoning Split Layout */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32">
-            {/* Contenedor gris más oscuro */}
-            <div className="bg-gray-100 rounded-3xl p-12 md:p-16 lg:p-24">
-              <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-center">
-                {/* Columna Izquierda - Texto */}
-                <div className="w-full md:w-1/2 space-y-8">
-                  <h2 
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
+            {/* Contenedor principal estilo "Cursor" */}
+            <div className="bg-red-100 rounded-3xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
+              {/* Wrapper de columnas con items-stretch para que crezcan */}
+              <div className="flex flex-col md:flex-row gap-12 lg:gap-24 w-full items-stretch flex-1">
+                {/* Columna Izquierda - Texto Estrecho */}
+                <div className="w-full md:w-[25%] lg:w-[20%] space-y-8 flex flex-col justify-center">
+                  <h2
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
                     style={{ fontFamily: "'Switzer', sans-serif" }}
                   >
                     Strategic Reasoning on Autopilot
                   </h2>
                   
-                  <p 
-                    className="text-lg md:text-xl text-gray-600 leading-relaxed"
+                  <p
+                    className="text-sm md:text-base text-gray-600 leading-relaxed"
                     style={{ fontFamily: "'Switzer', sans-serif" }}
                   >
                     Our engine processes millions of data points to solve the <span className="font-semibold text-foreground">Now What?</span> of your business strategy
@@ -137,11 +138,11 @@ export default function Home() {
                   </a>
                 </div>
 
-                {/* Columna Derecha - Ventana Interactiva */}
-                <div className="w-full md:w-1/2">
+                {/* Columna Derecha - Ventana Ancha y Alta */}
+                <div className="w-full md:w-[75%] lg:w-[80%] flex flex-col">
                   <InteractiveWindow
                     url="analytics.2laps.ai"
-                    containerClassName="w-full relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50"
+                    containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl bg-white py-6"
                   >
                     <div className="space-y-3 md:space-y-4 text-gray-800">
                       {/* Header */}
