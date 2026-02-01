@@ -1,8 +1,9 @@
-'use client';
-
 import { Header } from '@/components/Header';
 import { SocialProof } from '@/components/SocialProof';
 import { InteractiveWindow } from '@/components/InteractiveWindow';
+import { StrategicSection } from '@/components/StrategicSection';
+import { LanguageSelector } from '@/components/LanguageSelector';
+import { ThemeSelector } from '@/components/ThemeSelector';
 
 export default function Home() {
   return (
@@ -12,13 +13,13 @@ export default function Home() {
         {/* Contenido principal con padding top para el header fijo */}
         <div className="pt-16">
           {/* Sección de texto debajo del header */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 border-2 border-red-500">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
             <div 
-              className="text-left text-foreground leading-relaxed border-2 border-blue-500 text-2xl font-normal"
+              className="text-left text-foreground leading-relaxed text-2xl font-normal"
               style={{ fontFamily: "'Switzer', sans-serif" }}
             >
-              <p className="border border-green-500">Understand the market,</p>
-              <p className="border border-green-500">Before anyone else.</p>
+              <p>Understand the market,</p>
+              <p>before anyone else.</p>
             </div>
             
             <button className="mt-6 px-6 py-3 text-sm bg-foreground text-background rounded-full hover:scale-105 transition-transform">
@@ -100,347 +101,239 @@ export default function Home() {
           {/* Sección Social Proof */}
           <SocialProof />
 
-          {/* Nueva Sección - Strategic Reasoning Split Layout */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
-            {/* Contenedor principal estilo "Cursor" */}
-            <div className="bg-red-100 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
-              {/* Wrapper de columnas con items-stretch para que crezcan */}
-              <div className="flex flex-col md:flex-row gap-12 lg:gap-24 w-full items-stretch flex-1">
-                {/* Columna Izquierda - Texto Estrecho */}
-                <div className="w-full md:w-[25%] lg:w-[20%] space-y-2  flex flex-col justify-center">
-                  <h2
-                    className="text-base md:text-lg lg:text-xl font-bold text-foreground leading-none whitespace-nowrap"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Strategic Reasoning on Autopilot
-                  </h2>
+          {/* Secciones Strategic Reasoning */}
+          <StrategicSection />
+          <StrategicSection reverse={true} />
+          <StrategicSection />
 
-                  <p
-                    className="text-sm md:text-base text-gray-600 leading-relaxed"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Our engine processes millions of data points to solve the <span className="font-semibold text-foreground">Now What?</span> of your business strategy
+          {/* Sección Nuestra Misión */}
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
+            <div className="text-left">
+              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-8 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Our mission
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                We believe that in a world drowning in data, the most valuable asset is clarity. Our mission is to organize the world's business information and make it actionable.
+              </p>
+
+              <button className="mt-6 px-6 py-3 text-sm bg-foreground text-background rounded-full hover:scale-105 transition-transform">
+                Contact Us
+              </button>
+            </div>
+          </div>
+
+          {/* Sección de Características - Configuración Flexible */}
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
+            <div className="text-left mb-16">
+              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-4 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Powerful & Flexible
+              </h2>
+              <p className="text-lg md:text-xl text-gray-500" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Configure 2laps so you can do your best work.
+              </p>
+            </div>
+
+            {/* Grid de características */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+              {/* Feature 1 */}
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+                <div className="flex-grow-0">
+                  <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Specialized Modules
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Tailored to client needs: Marketing, R&D, Digital, Market Intelligence. Ad-hoc for every customer.
                   </p>
-
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-foreground font-medium text-base hover:gap-3 transition-all group"
-                  >
-                    Learn more
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
                 </div>
+                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                  <div className="text-4xl">🧩</div>
+                </div>
+              </div>
 
-                {/* Columna Derecha - Ventana Ancha y Alta */}
-                <div className="w-full md:w-[75%] lg:w-[80%] flex flex-col">
-                  <InteractiveWindow
-                    url="analytics.2laps.ai"
-                    containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl bg-white py-6"
-                  >
-                    <div className="space-y-3 md:space-y-4 text-gray-800">
-                      {/* Header */}
-                      <div className="flex items-center justify-between pb-3 border-b border-gray-300">
-                        <span className="text-sm md:text-base font-semibold text-gray-700">Real-Time Analysis Dashboard</span>
-                        <span className="text-xs md:text-sm text-green-600 flex items-center gap-1">
-                          <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></span>
-                          Live
-                        </span>
-                      </div>
+              {/* Feature 2 */}
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+                <div className="flex-grow-0">
+                  <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Custom Configuration
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Custom configuration of competitors, queries and AI personality for your specific brand.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                  <div className="text-4xl">⚙️</div>
+                </div>
+              </div>
 
-                      {/* Métricas de análisis */}
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Data Sources Monitored</span>
-                          <span className="font-mono font-bold text-blue-600">1,247,392</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[87%] bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                        </div>
-                      </div>
+              {/* Feature 3 */}
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+                <div className="flex-grow-0">
+                  <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Real-time Alerts
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    Automatic alerts for spikes, crashes and competitive shifts using advanced algorithms.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                  <div className="text-4xl">🚨</div>
+                </div>
+              </div>
 
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">AI Models Orchestrated</span>
-                          <span className="font-mono font-bold text-purple-600">12 / 15</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[80%] bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Strategic Insights Generated</span>
-                          <span className="font-mono font-bold text-green-600">3,482</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[93%] bg-gradient-to-r from-green-500 to-green-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      {/* Separador */}
-                      <div className="h-px bg-gray-300 my-3 md:my-4"></div>
-
-                      {/* Insights recientes */}
-                      <div className="space-y-2">
-                        <span className="text-xs md:text-sm font-semibold text-gray-700">Latest Insights</span>
-                        <div className="space-y-1.5">
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Market trend shift detected in EMEA region</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Competitor pricing strategy updated</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-blue-500 animate-pulse flex-shrink-0 mt-0.5">●</span>
-                            <span className="text-gray-700">Processing sentiment analysis...</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </InteractiveWindow>
+              {/* Feature 4 */}
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+                <div className="flex-grow-0">
+                  <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    AI-Powered Insights
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                    AI that processes millions of data points to uncover hidden patterns and emerging trends.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                  <div className="text-4xl">🤖</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Nueva Sección - Strategic Reasoning Split Layout (Invertida) */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
-            {/* Contenedor principal estilo "Cursor" */}
-            <div className="bg-red-100 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
-              {/* Wrapper de columnas con items-stretch para que crezcan */}
-              <div className="flex flex-col md:flex-row-reverse gap-6 lg:gap-4 w-full items-stretch flex-1">
-                {/* Columna Izquierda - Texto Estrecho (Móvil: arriba) */}
-                <div className="w-full md:w-[25%] lg:w-[20%] space-y-2 flex flex-col justify-center">
-                  <h2
-                    className="text-base md:text-lg lg:text-xl font-bold text-foreground leading-tight text-left"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Strategic Reasoning on Autopilot
-                  </h2>
+          {/* Sección Get 2laps now */}
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32">
+            <div className="text-center">
+              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-8 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Get 2laps now
+              </h2>
 
-                  <p
-                    className="text-sm md:text-base text-gray-600 leading-relaxed text-left"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Our engine processes millions of data points to solve the <span className="font-semibold text-foreground">Now What?</span> of your business strategy
-                  </p>
-
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-foreground font-medium text-base hover:gap-3 transition-all group self-start"
-                  >
-                    Learn more
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Columna Derecha - Ventana Ancha y Alta */}
-                <div className="w-full md:w-[75%] lg:w-[80%] flex flex-col">
-                  <InteractiveWindow
-                    url="analytics.2laps.ai"
-                    containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl bg-white py-6"
-                  >
-                    <div className="space-y-3 md:space-y-4 text-gray-800">
-                      {/* Header */}
-                      <div className="flex items-center justify-between pb-3 border-b border-gray-300">
-                        <span className="text-sm md:text-base font-semibold text-gray-700">Real-Time Analysis Dashboard</span>
-                        <span className="text-xs md:text-sm text-green-600 flex items-center gap-1">
-                          <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></span>
-                          Live
-                        </span>
-                      </div>
-
-                      {/* Métricas de análisis */}
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Data Sources Monitored</span>
-                          <span className="font-mono font-bold text-blue-600">1,247,392</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[87%] bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">AI Models Orchestrated</span>
-                          <span className="font-mono font-bold text-purple-600">12 / 15</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[80%] bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Strategic Insights Generated</span>
-                          <span className="font-mono font-bold text-green-600">3,482</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[93%] bg-gradient-to-r from-green-500 to-green-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      {/* Separador */}
-                      <div className="h-px bg-gray-300 my-3 md:my-4"></div>
-
-                      {/* Insights recientes */}
-                      <div className="space-y-2">
-                        <span className="text-xs md:text-sm font-semibold text-gray-700">Latest Insights</span>
-                        <div className="space-y-1.5">
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Market trend shift detected in EMEA region</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Competitor pricing strategy updated</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-blue-500 animate-pulse flex-shrink-0 mt-0.5">●</span>
-                            <span className="text-gray-700">Processing sentiment analysis...</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </InteractiveWindow>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Nueva Sección - Strategic Reasoning Split Layout (Tercera copia) */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
-            {/* Contenedor principal estilo "Cursor" */}
-            <div className="bg-red-100 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
-              {/* Wrapper de columnas con items-stretch para que crezcan */}
-              <div className="flex flex-col md:flex-row gap-12 lg:gap-24 w-full items-stretch flex-1">
-                {/* Columna Izquierda - Texto Estrecho */}
-                <div className="w-full md:w-[25%] lg:w-[20%] space-y-2 flex flex-col justify-center">
-                  <h2
-                    className="text-base md:text-lg lg:text-xl font-bold text-foreground leading-none whitespace-nowrap"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Strategic Reasoning on Autopilot
-                  </h2>
-
-                  <p
-                    className="text-sm md:text-base text-gray-600 leading-relaxed"
-                    style={{ fontFamily: "'Switzer', sans-serif" }}
-                  >
-                    Our engine processes millions of data points to solve the <span className="font-semibold text-foreground">Now What?</span> of your business strategy
-                  </p>
-
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-foreground font-medium text-base hover:gap-3 transition-all group"
-                  >
-                    Learn more
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-
-                {/* Columna Derecha - Ventana Ancha y Alta */}
-                <div className="w-full md:w-[75%] lg:w-[80%] flex flex-col">
-                  <InteractiveWindow
-                    url="analytics.2laps.ai"
-                    containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl bg-white py-6"
-                  >
-                    <div className="space-y-3 md:space-y-4 text-gray-800">
-                      {/* Header */}
-                      <div className="flex items-center justify-between pb-3 border-b border-gray-300">
-                        <span className="text-sm md:text-base font-semibold text-gray-700">Real-Time Analysis Dashboard</span>
-                        <span className="text-xs md:text-sm text-green-600 flex items-center gap-1">
-                          <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></span>
-                          Live
-                        </span>
-                      </div>
-
-                      {/* Métricas de análisis */}
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Data Sources Monitored</span>
-                          <span className="font-mono font-bold text-blue-600">1,247,392</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[87%] bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">AI Models Orchestrated</span>
-                          <span className="font-mono font-bold text-purple-600">12 / 15</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[80%] bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-gray-600">Strategic Insights Generated</span>
-                          <span className="font-mono font-bold text-green-600">3,482</span>
-                        </div>
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[93%] bg-gradient-to-r from-green-500 to-green-600 rounded-full"></div>
-                        </div>
-                      </div>
-
-                      {/* Separador */}
-                      <div className="h-px bg-gray-300 my-3 md:my-4"></div>
-
-                      {/* Insights recientes */}
-                      <div className="space-y-2">
-                        <span className="text-xs md:text-sm font-semibold text-gray-700">Latest Insights</span>
-                        <div className="space-y-1.5">
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Market trend shift detected in EMEA region</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-green-600 flex-shrink-0 mt-0.5">✓</span>
-                            <span className="text-gray-700">Competitor pricing strategy updated</span>
-                          </div>
-                          <div className="flex items-start gap-2 text-xs md:text-sm">
-                            <span className="text-blue-500 animate-pulse flex-shrink-0 mt-0.5">●</span>
-                            <span className="text-gray-700">Processing sentiment analysis...</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </InteractiveWindow>
-                </div>
-              </div>
+              <button className="px-8 py-4 text-base bg-foreground text-background rounded-full hover:scale-105 transition-transform">
+                Contact for Demo
+              </button>
             </div>
           </div>
 
           {/* Aquí irá el resto del contenido */}
         </div>
+
+        {/* Footer */}
+        <footer className="border-t border-gray-200 bg-gray-50">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+              {/* Columna 1 - Product */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                  Product
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Use Cases
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Columna 2 - Company */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                  Company
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Columna 3 - Legal */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                  Legal
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Terms of Service
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Columna 4 - Connect */}
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                  Connect
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                      GitHub
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Línea divisoria */}
+            <div className="border-t border-gray-200 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                {/* Copyright */}
+                <p className="text-sm text-gray-600" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                  © 2026 2laps.ai
+                </p>
+
+                {/* Controles - Idioma y Modo Oscuro */}
+                <div className="flex items-center gap-4">
+                  {/* Selector de Tema */}
+                  <ThemeSelector />
+                  
+                  {/* Selector de Idioma */}
+                  <LanguageSelector />
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );

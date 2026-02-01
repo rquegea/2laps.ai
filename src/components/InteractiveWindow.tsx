@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback, ReactNode } from 'react';
+import { useState, useRef, useEffect, useCallback, ReactNode, memo } from 'react';
 
 interface InteractiveWindowProps {
   bgImage?: string;
@@ -10,7 +10,7 @@ interface InteractiveWindowProps {
   containerClassName?: string;
 }
 
-export function InteractiveWindow({ 
+export const InteractiveWindow = memo(function InteractiveWindow({ 
   bgImage, 
   windowTitle, 
   url, 
@@ -166,7 +166,8 @@ export function InteractiveWindow({
         <img
           src={bgImage}
           alt={windowTitle || "Background visualization"}
-          className="w-full h-full object-cover rounded-2xl shadow-2xl"
+          className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+          loading="lazy"
         />
       )}
       
@@ -274,4 +275,4 @@ export function InteractiveWindow({
       </div>
     </div>
   );
-}
+});

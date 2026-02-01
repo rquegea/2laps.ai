@@ -1,14 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export function Header() {
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md"
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-500"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
@@ -17,7 +12,9 @@ export function Header() {
             <img
               src="/logos/2lapslogoletras.png"
               alt="2laps"
-              className="h-7"
+              width="100"
+              height="28"
+              className="h-7 w-auto"
             />
           </div>
 
@@ -57,6 +54,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }
