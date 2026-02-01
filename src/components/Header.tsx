@@ -8,7 +8,7 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img
               src="/logos/2lapslogoletras.png"
               alt="2laps"
@@ -16,27 +16,27 @@ export function Header() {
               height="28"
               className="h-7 w-auto"
             />
-          </div>
+          </a>
 
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center gap-8">
             <a
-              href="#features"
+              href="/features"
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
               Features
             </a>
             <a
-              href="#framework"
+              href="/enterprise"
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
-              Framework
+              Enterprise
             </a>
             <a
-              href="#engine"
+              href="/pricing"
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
-              Engine
+              Pricing
             </a>
           </nav>
 

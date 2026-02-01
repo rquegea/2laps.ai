@@ -109,11 +109,14 @@ export default function Home() {
           {/* Sección Nuestra Misión */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
             <div className="text-left">
-              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-8 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+              <p className="text-xl md:text-2xl font-normal text-gray-500 mb-2 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
                 Our mission
+              </p>
+              <h2 className="text-3xl md:text-4xl font-normal text-foreground mb-6 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                We believe that in a world drowning in data, the most valuable asset is clarity.
               </h2>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl" style={{ fontFamily: "'Switzer', sans-serif" }}>
-                We believe that in a world drowning in data, the most valuable asset is clarity. Our mission is to organize the world's business information and make it actionable.
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Our mission is to organize the world's business information and make it actionable.
               </p>
 
               <button className="mt-6 px-6 py-3 text-sm bg-foreground text-background rounded-full hover:scale-105 transition-transform">
@@ -125,12 +128,12 @@ export default function Home() {
           {/* Sección de Características - Configuración Flexible */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
             <div className="text-left mb-16">
-              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-4 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+              <p className="text-xl md:text-2xl font-normal text-gray-500 mb-2 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
                 Powerful & Flexible
-              </h2>
-              <p className="text-lg md:text-xl text-gray-500" style={{ fontFamily: "'Switzer', sans-serif" }}>
-                Configure 2laps so you can do your best work.
               </p>
+              <h2 className="text-3xl md:text-4xl font-normal text-foreground mb-6 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Configure 2laps so you can do your best work.
+              </h2>
             </div>
 
             {/* Grid de características */}
@@ -200,8 +203,11 @@ export default function Home() {
           {/* Sección Get 2laps now */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32">
             <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-normal text-foreground mb-8 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+              <p className="text-xl md:text-2xl font-normal text-gray-500 mb-2 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
                 Get 2laps now
+              </p>
+              <h2 className="text-3xl md:text-4xl font-normal text-foreground mb-6 leading-tight" style={{ fontFamily: "'Switzer', sans-serif" }}>
+                Ready to transform your business intelligence?
               </h2>
 
               <button className="px-8 py-4 text-base bg-foreground text-background rounded-full hover:scale-105 transition-transform">
