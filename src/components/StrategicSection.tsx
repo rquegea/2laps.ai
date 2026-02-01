@@ -3,9 +3,10 @@ import { InteractiveWindow } from './InteractiveWindow';
 
 interface StrategicSectionProps {
   reverse?: boolean;
+  bgImage?: string;
 }
 
-export const StrategicSection = memo(function StrategicSection({ reverse = false }: StrategicSectionProps) {
+export const StrategicSection = memo(function StrategicSection({ reverse = false, bgImage }: StrategicSectionProps) {
   const containerClass = reverse 
     ? 'flex flex-col md:flex-row-reverse gap-6 lg:gap-4 w-full items-stretch flex-1'
     : 'flex flex-col md:flex-row gap-12 lg:gap-24 w-full items-stretch flex-1';
@@ -24,7 +25,7 @@ export const StrategicSection = memo(function StrategicSection({ reverse = false
 
   return (
     <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
-      <div className="bg-red-100 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
+      <div className="bg-[#F1F1F1] border border-gray-200 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
         <div className={containerClass}>
           {/* Columna de Texto */}
           <div className={textClass}>
@@ -62,7 +63,8 @@ export const StrategicSection = memo(function StrategicSection({ reverse = false
           <div className="w-full md:w-[75%] lg:w-[80%] flex flex-col">
             <InteractiveWindow
               url="analytics.2laps.ai"
-              containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl bg-white py-6"
+              bgImage={bgImage}
+              containerClassName="w-full h-full min-h-[600px] md:min-h-[700px] relative overflow-hidden rounded-2xl py-6"
             >
               <div className="space-y-3 md:space-y-4 text-gray-800">
                 {/* Header */}

@@ -14,11 +14,11 @@ export default function Home() {
         <div className="pt-16">
           {/* Sección de texto debajo del header */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
-            <div 
-              className="text-left text-foreground leading-relaxed text-2xl font-normal"
+            <div
+              className="text-left text-foreground leading-relaxed text-3xl font-normal"
               style={{ fontFamily: "'Switzer', sans-serif" }}
             >
-              <p>Understand the market,</p>
+              <p>Understand the <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#BC4E55] after:transition-all after:duration-300 hover:after:w-full">market</span></p>
               <p>before anyone else.</p>
             </div>
             
@@ -34,7 +34,7 @@ export default function Home() {
           {/* Segundo contenedor - imagen destacada con ventana flotante */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
             <InteractiveWindow
-              bgImage="/resources/oceano-abstracto-3059.webp"
+              bgImage="/resources/s-l1200.jpg"
               url="platform.2laps.ai"
             >
               <div className="space-y-1 md:space-y-2 text-gray-800">
@@ -102,9 +102,9 @@ export default function Home() {
           <SocialProof />
 
           {/* Secciones Strategic Reasoning */}
-          <StrategicSection />
-          <StrategicSection reverse={true} />
-          <StrategicSection />
+          <StrategicSection bgImage="/resources/s-l12001.jpg" />
+          <StrategicSection reverse={true} bgImage="/resources/RS15935_P201611_HopperE-copy_web-1.jpg" />
+          <StrategicSection bgImage="/resources/large_RS18750_Addison_Manhattan-Bridge-Loop_ART500872_We.jpg" />
 
           {/* Sección Nuestra Misión */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
@@ -139,7 +139,7 @@ export default function Home() {
             {/* Grid de características */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
               {/* Feature 1 */}
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+              <div className="bg-[#F9F9F9] rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
                 <div className="flex-grow-0">
                   <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
                     Specialized Modules
@@ -148,13 +148,13 @@ export default function Home() {
                     Tailored to client needs: Marketing, R&D, Digital, Market Intelligence. Ad-hoc for every customer.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                <div className="bg-[#F9F9F9] rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
                   <div className="text-4xl">🧩</div>
                 </div>
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+              <div className="bg-[#F9F9F9] rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
                 <div className="flex-grow-0">
                   <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
                     Custom Configuration
@@ -163,13 +163,13 @@ export default function Home() {
                     Custom configuration of competitors, queries and AI personality for your specific brand.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                <div className="bg-[#F9F9F9] rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
                   <div className="text-4xl">⚙️</div>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+              <div className="bg-[#F9F9F9] rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
                 <div className="flex-grow-0">
                   <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
                     Real-time Alerts
@@ -178,13 +178,13 @@ export default function Home() {
                     Automatic alerts for spikes, crashes and competitive shifts using advanced algorithms.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                <div className="bg-[#F9F9F9] rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
                   <div className="text-4xl">🚨</div>
                 </div>
               </div>
 
               {/* Feature 4 */}
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
+              <div className="bg-[#F9F9F9] rounded-2xl p-8 hover:bg-gray-100 transition-colors h-96 flex flex-col">
                 <div className="flex-grow-0">
                   <h3 className="text-xl font-medium text-foreground mb-2" style={{ fontFamily: "'Switzer', sans-serif" }}>
                     AI-Powered Insights
@@ -193,7 +193,7 @@ export default function Home() {
                     AI that processes millions of data points to uncover hidden patterns and emerging trends.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
+                <div className="bg-[#F9F9F9] rounded-xl p-6 mt-6 flex-grow flex items-center justify-center">
                   <div className="text-4xl">🤖</div>
                 </div>
               </div>
