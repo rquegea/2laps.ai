@@ -101,9 +101,9 @@ export default function Home() {
           <SocialProof />
 
           {/* Nueva Sección - Strategic Reasoning Split Layout */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32">
             {/* Contenedor gris más oscuro */}
-            <div className="bg-gray-100 rounded-3xl py-32 md:py-40 lg:py-56 px-12 md:px-16 lg:px-24">
+            <div className="bg-gray-100 rounded-3xl p-12 md:p-16 lg:p-24">
               <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-center">
                 {/* Columna Izquierda - Texto */}
                 <div className="w-full md:w-1/2 space-y-8">
