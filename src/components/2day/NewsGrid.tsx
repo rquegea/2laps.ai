@@ -56,7 +56,7 @@ export function NewsGrid() {
       {newsData.map((news, index) => (
         <div
           key={index}
-          className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+          className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
         >
           <img
             src={news.image}
