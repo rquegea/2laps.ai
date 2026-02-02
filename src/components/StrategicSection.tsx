@@ -1,4 +1,6 @@
-import { memo } from 'react';
+'use client';
+
+import { memo, useState, useEffect, useRef } from 'react';
 import { InteractiveWindow } from './InteractiveWindow';
 
 interface StrategicSectionProps {
@@ -7,6 +9,43 @@ interface StrategicSectionProps {
 }
 
 export const StrategicSection = memo(function StrategicSection({ reverse = false, bgImage }: StrategicSectionProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isThinking, setIsThinking] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+            // Esperar un momento antes de empezar a "pensar"
+            setTimeout(() => {
+              setIsThinking(true);
+              // Después de 2 segundos de "thinking", mostrar el contenido
+              setTimeout(() => {
+                setIsThinking(false);
+                setShowContent(true);
+              }, 2000);
+            }, 500);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
+
   const containerClass = reverse 
     ? 'flex flex-col md:flex-row-reverse gap-6 lg:gap-4 w-full items-stretch flex-1'
     : 'flex flex-col md:flex-row gap-12 lg:gap-24 w-full items-stretch flex-1';
@@ -24,7 +63,7 @@ export const StrategicSection = memo(function StrategicSection({ reverse = false
     : 'inline-flex items-center gap-2 text-foreground font-medium text-base hover:gap-3 transition-all group';
 
   return (
-    <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
+    <div ref={sectionRef} className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-20">
       <div className="bg-[#F1F1F1] border border-gray-200 rounded-xl p-6 md:p-8 lg:p-10 lg:min-h-[80vh] flex items-center box-border">
         <div className={containerClass}>
           {/* Columna de Texto */}
@@ -269,83 +308,115 @@ export const StrategicSection = memo(function StrategicSection({ reverse = false
                 {/* Panel principal */}
                 <div className="flex-1 bg-white flex flex-col">
                   <div className="flex-1 overflow-y-auto px-8 py-6">
-                    {/* Header del proyecto */}
-                    <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                      Strategic Intelligence Platform
-                    </h1>
-                    
-                    <p className="text-gray-600 text-[15px] mb-6 leading-relaxed">
-                      Build a comprehensive strategic reasoning engine that analyzes market trends, competitor movements, and brand visibility in real-time. Ensure robust data validation and AI model orchestration.
-                    </p>
-
-                    {/* Badge de archivo */}
-                    <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 mb-6">
-                      <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <span className="text-sm text-gray-700 font-medium">StrategicEngine.tsx</span>
-                      <span className="text-green-600 text-sm font-mono">+147</span>
-                      <span className="text-red-500 text-sm font-mono">-8</span>
+                    {/* Pregunta del usuario */}
+                    <div className="mb-6 pb-4 border-b border-gray-200">
+                      <p className="text-gray-900 text-[15px] font-medium">
+                        Why has EcoGrid's visibility increased by 18% this week?
+                      </p>
                     </div>
 
-                    {/* Mensaje de éxito */}
-                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-6">
-                      <p className="text-gray-900 font-medium text-[15px] mb-4">
-                        Perfect! I've implemented a robust strategic intelligence system with:
-                      </p>
+                    {/* Estado de "Thinking" */}
+                    {isThinking && (
+                      <div className="flex items-center gap-2 mb-6">
+                        <div className="flex gap-1">
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                        </div>
+                        <span className="text-gray-600 text-sm animate-pulse">Thinking...</span>
+                      </div>
+                    )}
 
-                      <div className="space-y-3">
-                        <div className="text-[15px] text-gray-800">
-                          <span className="font-bold text-gray-900">Key Features:</span>
+                    {/* Contenido que aparece después del thinking */}
+                    {showContent && (
+                      <>
+                        {/* Título del análisis */}
+                        <h1 className="text-xl font-bold text-gray-900 mb-4 animate-fadeIn">
+                          Impact Analysis: Energy Sector
+                        </h1>
+
+                        {/* Badge de fuentes */}
+                        <div className="flex items-center gap-2 mb-6 animate-fadeIn" style={{ animationDelay: '200ms' }}>
+                          <div className="relative w-16 h-6 flex items-center">
+                            <div className="absolute w-6 h-6 rounded-full border border-gray-400 bg-white flex items-center justify-center left-0 z-30">
+                              <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                              </svg>
+                            </div>
+                            <div className="absolute w-6 h-6 rounded-full border border-gray-400 bg-white flex items-center justify-center left-4 z-20">
+                              <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                              </svg>
+                            </div>
+                            <div className="absolute w-6 h-6 rounded-full border border-gray-400 bg-white flex items-center justify-center left-8 z-10">
+                              <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                              </svg>
+                            </div>
+                          </div>
+                          <span className="text-sm text-gray-600">5 sources</span>
                         </div>
 
-                        <div className="pl-4 space-y-2">
-                          <div className="flex items-start gap-2">
-                            <span className="text-gray-400 mt-1">•</span>
-                            <div>
-                              <span className="font-semibold text-gray-900">Real-Time Analysis:</span>
-                              <span className="text-gray-700"> Process millions of data points from diverse media sources</span>
-                            </div>
+                        {/* Respuesta de la IA */}
+                        <div className="mb-6 animate-fadeIn" style={{ animationDelay: '400ms' }}>
+                      <div className="space-y-4 text-[15px] text-gray-800 leading-relaxed">
+                        <p>
+                          The 18% visibility spike for EcoGrid is primarily driven by two interconnected macroeconomic factors affecting the energy sector:
+                        </p>
+
+                        <div className="space-y-3 pl-4 border-l-2 border-gray-200">
+                          <div>
+                            <span className="font-semibold text-gray-900">1. New export tariffs on construction materials</span>
+                            <sup className="text-gray-500 ml-1">[1,2]</sup>
+                            <p className="mt-1 text-gray-700">
+                              Recent policy changes have imposed significant tariffs on key construction materials, triggering extensive media coverage and analyst commentary about infrastructure development costs.
+                            </p>
                           </div>
 
-                          <div className="flex items-start gap-2">
-                            <span className="text-gray-400 mt-1">•</span>
-                            <div>
-                              <span className="font-semibold text-gray-900">AI Orchestration:</span>
-                              <span className="text-gray-700"> Coordinate multiple AI models for sentiment analysis and trend detection</span>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start gap-2">
-                            <span className="text-gray-400 mt-1">•</span>
-                            <div>
-                              <span className="font-semibold text-gray-900">Brand Visibility:</span>
-                              <span className="text-gray-700"> Track share of voice and market positioning metrics</span>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start gap-2">
-                            <span className="text-gray-400 mt-1">•</span>
-                            <div>
-                              <span className="font-semibold text-gray-900">Competitive Intelligence:</span>
-                              <span className="text-gray-700"> Monitor competitor strategies and market movements</span>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start gap-2">
-                            <span className="text-gray-400 mt-1">•</span>
-                            <div>
-                              <span className="font-semibold text-gray-900">Actionable Insights:</span>
-                              <span className="text-gray-700"> Generate strategic recommendations based on data patterns</span>
-                            </div>
+                          <div>
+                            <span className="font-semibold text-gray-900">2. Anticipated ECB interest rate adjustment</span>
+                            <sup className="text-gray-500 ml-1">[3,4,5]</sup>
+                            <p className="mt-1 text-gray-700">
+                              Market speculation around the European Central Bank's upcoming rate decision has amplified discussions about energy sector valuations and infrastructure financing.
+                            </p>
                           </div>
                         </div>
+
+                        <p className="text-gray-700">
+                          These factors have created heightened media attention, with coverage spanning business news, sector analysis, and macroeconomic policy discussions.
+                        </p>
                       </div>
 
-                      <p className="text-gray-700 text-[15px] mt-4 leading-relaxed">
-                        The engine validates all data inputs, ensuring accuracy and reliability. It's designed to answer the <span className="font-semibold text-gray-900">"Now What?"</span> of your business strategy with confidence.
-                      </p>
+                      {/* Referencias */}
+                      <div className="mt-6 pt-4 border-t border-gray-200">
+                        <div className="text-xs text-gray-500 space-y-1">
+                          <p><span className="font-semibold text-gray-700">[1]</span> Bloomberg Intelligence — Construction Tariffs Impact Analysis</p>
+                          <p><span className="font-semibold text-gray-700">[2]</span> Expansión — Aranceles afectan sector inmobiliario</p>
+                          <p><span className="font-semibold text-gray-700">[3]</span> Reuters — ECB Rate Decision Implications</p>
+                          <p><span className="font-semibold text-gray-700">[4]</span> Financial Times — Energy Sector Outlook</p>
+                          <p><span className="font-semibold text-gray-700">[5]</span> The Wall Street Journal — European Markets React</p>
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Estrategia Recomendada */}
+                    <div className="border border-gray-300 rounded-lg p-5 bg-gray-50 animate-fadeIn" style={{ animationDelay: '600ms' }}>
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="text-base font-semibold text-gray-900 mb-2">Recommended Strategy</h3>
+                          <p className="text-gray-700 text-[14px] leading-relaxed">
+                            Increase media coverage in DACH markets to mitigate sectoral noise and strengthen positioning ahead of regulatory shifts.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    </>
+                    )}
                   </div>
 
                   {/* Input de chat estilo Cursor - fijo en la parte inferior */}
