@@ -92,8 +92,8 @@ export const InteractiveWindow = memo(function InteractiveWindow({
       const deltaX = e.clientX - resizeStart.x;
       const deltaY = e.clientY - resizeStart.y;
 
-      let newWidth = Math.max(300, resizeStart.width + deltaX);
-      let newHeight = Math.max(200, resizeStart.height + deltaY);
+      let newWidth = Math.max(500, resizeStart.width + deltaX);
+      let newHeight = Math.max(400, resizeStart.height + deltaY);
 
       // Calcular la nueva posición compensada
       const deltaWidth = newWidth - resizeStart.width;
@@ -117,13 +117,13 @@ export const InteractiveWindow = memo(function InteractiveWindow({
       // Si el borde derecho se sale del límite, limitar el ancho
       if (futureRight > containerRight) {
         const maxWidthFromRight = containerRight - futureLeft;
-        newWidth = Math.max(300, maxWidthFromRight);
+        newWidth = Math.max(500, maxWidthFromRight);
       }
 
       // Si el borde inferior se sale del límite, limitar el alto
       if (futureBottom > containerBottom) {
         const maxHeightFromBottom = containerBottom - futureTop;
-        newHeight = Math.max(200, maxHeightFromBottom);
+        newHeight = Math.max(400, maxHeightFromBottom);
       }
 
       // Recalcular la posición compensada con el nuevo tamaño limitado
@@ -174,7 +174,7 @@ export const InteractiveWindow = memo(function InteractiveWindow({
       {/* Ventana flotante estilo macOS - arrastrable y redimensionable en desktop */}
       <div 
         ref={windowRef}
-        className="absolute top-1/2 left-1/2 w-[90%] md:w-[85%] max-w-[700px] bg-white rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] z-10 overflow-hidden select-none
+        className="absolute top-1/2 left-1/2 w-[95%] md:w-[90%] max-w-[1100px] h-[80%] md:h-[85%] bg-white rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] z-10 overflow-hidden select-none
                    transition-shadow hover:shadow-[0_25px_70px_rgba(0,0,0,0.35)]"
         style={{
           transform: `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`,
@@ -257,11 +257,9 @@ export const InteractiveWindow = memo(function InteractiveWindow({
         
         {/* Contenido de la ventana - responsive al tamaño */}
         <div 
-          className="p-3 md:p-6 font-mono bg-white overflow-y-auto"
+          className="bg-white overflow-y-auto"
           style={{
-            fontSize: size.width > 0 ? `${Math.max(9, Math.min(14, size.width / 50))}px` : undefined,
-            height: size.height > 0 ? `${size.height - 40}px` : undefined,
-            maxHeight: size.height > 0 ? 'none' : '60vh'
+            height: size.height > 0 ? `${size.height - 35}px` : 'calc(100% - 35px)'
           }}
         >
           {children}

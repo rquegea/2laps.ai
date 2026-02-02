@@ -4,6 +4,7 @@ import { InteractiveWindow } from '@/components/InteractiveWindow';
 import { StrategicSection } from '@/components/StrategicSection';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { ThemeSelector } from '@/components/ThemeSelector';
+import { TwoDayContent } from '@/components/TwoDayContent';
 
 export default function Home() {
   return (
@@ -36,65 +37,9 @@ export default function Home() {
             <InteractiveWindow
               bgImage="/resources/s-l1200.jpg"
               url="platform.2laps.ai"
+              containerClassName="w-full relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-2xl"
             >
-              <div className="space-y-1 md:space-y-2 text-gray-800">
-                <div className="flex flex-wrap break-all">
-                  <span className="text-purple-600">const</span>
-                  <span className="ml-1 md:ml-2">intelligence</span>
-                  <span className="ml-1 md:ml-2">=</span>
-                  <span className="ml-1 md:ml-2 text-green-600">"2laps.ai"</span>
-                  <span>;</span>
-                </div>
-                <div className="flex flex-wrap break-all">
-                  <span className="text-purple-600">const</span>
-                  <span className="ml-1 md:ml-2">data</span>
-                  <span className="ml-1 md:ml-2">=</span>
-                  <span className="ml-1 md:ml-2 text-blue-600">await</span>
-                  <span className="ml-1 md:ml-2">monitor</span>
-                  <span className="text-yellow-600">(</span>
-                  <span className="text-green-600">"global_markets"</span>
-                  <span className="text-yellow-600">)</span>
-                  <span>;</span>
-                </div>
-                <div className="h-px bg-gray-200 my-2 md:my-3"></div>
-                <div className="flex">
-                  <span className="text-gray-500">// Análisis tiempo real</span>
-                </div>
-                <div className="flex flex-wrap break-all">
-                  <span className="text-purple-600">function</span>
-                  <span className="ml-1 md:ml-2 text-blue-600">analyzeMarket</span>
-                  <span className="text-yellow-600">(</span>
-                  <span>data</span>
-                  <span className="text-yellow-600">)</span>
-                  <span className="ml-1 md:ml-2 text-yellow-600">{"{"}</span>
-                </div>
-                <div className="flex flex-wrap break-all ml-2 md:ml-4">
-                  <span className="text-purple-600">return</span>
-                  <span className="ml-1 md:ml-2">AI</span>
-                  <span className="text-yellow-600">.</span>
-                  <span>orchestrate</span>
-                  <span className="text-yellow-600">(</span>
-                  <span>data</span>
-                  <span className="text-yellow-600">)</span>
-                  <span>;</span>
-                </div>
-                <div className="flex">
-                  <span className="text-yellow-600">{"}"}</span>
-                </div>
-                <div className="h-px bg-gray-200 my-2 md:my-3"></div>
-                <div className="flex items-center gap-1 md:gap-2 flex-wrap">
-                  <span className="text-green-600 text-xs md:text-base flex-shrink-0">✓</span>
-                  <span className="text-gray-600 text-[8px] md:text-sm">Procesando 1M+ datos</span>
-                </div>
-                <div className="flex items-center gap-1 md:gap-2 flex-wrap">
-                  <span className="text-green-600 text-xs md:text-base flex-shrink-0">✓</span>
-                  <span className="text-gray-600 text-[8px] md:text-sm">Orquestando modelos IA</span>
-                </div>
-                <div className="flex items-center gap-1 md:gap-2 flex-wrap">
-                  <span className="text-blue-500 animate-pulse text-xs md:text-base flex-shrink-0">●</span>
-                  <span className="text-gray-600 text-[8px] md:text-sm">Generando insights...</span>
-                </div>
-              </div>
+              <TwoDayContent />
             </InteractiveWindow>
           </div>
 
