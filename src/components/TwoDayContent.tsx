@@ -1,5 +1,9 @@
 'use client';
 
+import { TickerBar } from './2day/TickerBar';
+import { VisibilityChart } from './2day/VisibilityChart';
+import { NewsGrid } from './2day/NewsGrid';
+
 export function TwoDayContent() {
   return (
     <div className="bg-white h-full flex" style={{ fontFamily: "'Switzer', sans-serif" }}>
@@ -56,29 +60,8 @@ export function TwoDayContent() {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Header con ticker de instituciones - Alineado con el logo */}
-        <div className="border-b border-gray-200 bg-white overflow-hidden flex items-center" style={{ height: '45px' }}>
-          <div className="flex items-center gap-3 px-4 overflow-x-auto whitespace-nowrap text-[11px]">
-            <span className="text-green-600 font-medium">+47%</span>
-            <span className="font-medium text-gray-700">GreenEnergy Corp 45.0</span>
-            <span className="text-red-600 font-medium">-41%</span>
-            <span className="font-medium text-gray-700">SolarTech Inc 58.0</span>
-            <span className="text-green-600 font-medium">+32%</span>
-            <span className="font-medium text-gray-700">HydroFuel Ltd 69.0</span>
-            <span className="text-green-600 font-medium">+28%</span>
-            <span className="font-medium text-gray-700">WindPower SA 68.0</span>
-            <span className="text-red-600 font-medium">-15%</span>
-            <span className="font-medium text-gray-700">EcoGrid Systems 52.0</span>
-            <span className="text-green-600 font-medium">+54%</span>
-            <span className="font-medium text-gray-700">CarbonZero 45.0</span>
-            <span className="text-red-600 font-medium">-22%</span>
-            <span className="font-medium text-gray-700">CleanEnergy Inc 68.0</span>
-            <span className="text-green-600 font-medium">+47%</span>
-            <span className="font-medium text-gray-700">GreenEnergy Corp 45.0</span>
-            <span className="text-red-600 font-medium">-41%</span>
-            <span className="font-medium text-gray-700">SolarTech Inc 58.0</span>
-          </div>
-        </div>
+        {/* Header con ticker de instituciones - Componente TickerBar */}
+        <TickerBar />
 
         {/* Content wrapper con scroll */}
         <div className="flex-1 overflow-y-auto">
@@ -134,161 +117,8 @@ export function TwoDayContent() {
 
               {/* Sidebar - Visibility Movers y Sentimiento */}
               <div className="space-y-6">
-                {/* Visibility Movers */}
-                <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-sm">Visibilidad Movers</h3>
-                    <div className="flex items-center gap-1 text-[10px] text-gray-500 bg-gray-50 px-2 py-1 rounded">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
-                      <span>Real</span>
-                    </div>
-                  </div>
-                  
-                  {/* Grid de 2x2 para los movers */}
-                  <div className="grid grid-cols-2 gap-4">
-                    {/* GreenEnergy Corp */}
-                    <div className="relative">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-[11px] font-semibold text-gray-800">GreenEner...</span>
-                        <span className="text-[11px] font-bold text-gray-800">15.5</span>
-                      </div>
-                      <div className="h-16 bg-green-50 rounded-lg p-2 relative overflow-hidden">
-                        <svg viewBox="0 0 100 50" className="w-full h-full" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"/>
-                              <stop offset="100%" stopColor="#22c55e" stopOpacity="0.05"/>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            d="M0,45 L15,40 L30,35 L45,38 L60,30 L75,25 L90,20 L100,15 L100,50 L0,50 Z"
-                            fill="url(#greenGradient)"
-                          />
-                          <polyline
-                            points="0,45 15,40 30,35 45,38 60,30 75,25 90,20 100,15"
-                            fill="none"
-                            stroke="#22c55e"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                      </div>
-                      <div className="flex items-center gap-1 mt-1">
-                        <span className="text-[11px] font-semibold text-green-600">+6.1%</span>
-                        <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    {/* SolarTech Inc */}
-                    <div className="relative">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-[11px] font-semibold text-gray-800">SolarTech...</span>
-                        <span className="text-[11px] font-bold text-gray-800">19.7</span>
-                      </div>
-                      <div className="h-16 bg-red-50 rounded-lg p-2 relative overflow-hidden">
-                        <svg viewBox="0 0 100 50" className="w-full h-full" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#ef4444" stopOpacity="0.3"/>
-                              <stop offset="100%" stopColor="#ef4444" stopOpacity="0.05"/>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            d="M0,15 L15,18 L30,20 L45,25 L60,28 L75,32 L90,35 L100,40 L100,50 L0,50 Z"
-                            fill="url(#redGradient)"
-                          />
-                          <polyline
-                            points="0,15 15,18 30,20 45,25 60,28 75,32 90,35 100,40"
-                            fill="none"
-                            stroke="#ef4444"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                      </div>
-                      <div className="flex items-center gap-1 mt-1">
-                        <span className="text-[11px] font-semibold text-red-600">-18.7%</span>
-                        <svg className="w-3 h-3 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    {/* HydroFuel Ltd */}
-                    <div className="relative">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-[11px] font-semibold text-gray-800">HydroFuel...</span>
-                        <span className="text-[11px] font-bold text-gray-800">11.0</span>
-                      </div>
-                      <div className="h-16 bg-green-50 rounded-lg p-2 relative overflow-hidden">
-                        <svg viewBox="0 0 100 50" className="w-full h-full" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="greenGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"/>
-                              <stop offset="100%" stopColor="#22c55e" stopOpacity="0.05"/>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            d="M0,40 L15,38 L30,35 L45,30 L60,28 L75,25 L90,22 L100,18 L100,50 L0,50 Z"
-                            fill="url(#greenGradient2)"
-                          />
-                          <polyline
-                            points="0,40 15,38 30,35 45,30 60,28 75,25 90,22 100,18"
-                            fill="none"
-                            stroke="#22c55e"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                        {/* Tooltip flotante */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded text-[10px] font-semibold shadow-lg">
-                          10.6
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1 mt-1">
-                        <span className="text-[11px] font-semibold text-green-600">+7.9%</span>
-                        <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    {/* WindPower SA */}
-                    <div className="relative">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-[11px] font-semibold text-gray-800">WindPower...</span>
-                        <span className="text-[11px] font-bold text-gray-800">8.1</span>
-                      </div>
-                      <div className="h-16 bg-green-50 rounded-lg p-2 relative overflow-hidden">
-                        <svg viewBox="0 0 100 50" className="w-full h-full" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="greenGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"/>
-                              <stop offset="100%" stopColor="#22c55e" stopOpacity="0.05"/>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            d="M0,30 L15,32 L30,35 L45,33 L60,34 L75,32 L90,28 L100,25 L100,50 L0,50 Z"
-                            fill="url(#greenGradient3)"
-                          />
-                          <polyline
-                            points="0,30 15,32 30,35 45,33 60,34 75,32 90,28 100,25"
-                            fill="none"
-                            stroke="#22c55e"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                      </div>
-                      <div className="flex items-center gap-1 mt-1">
-                        <span className="text-[11px] font-semibold text-green-600">+25.2%</span>
-                        <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* Visibility Movers - Componente mejorado con interacción */}
+                <VisibilityChart />
 
                 {/* Sentimiento del Mercado */}
                 <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
@@ -379,65 +209,8 @@ export function TwoDayContent() {
               </div>
             </div>
 
-            {/* Cards de noticias secundarias */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {/* Card 1 */}
-              <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                <img 
-                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=200&fit=crop"
-                  alt="Solar Panels"
-                  className="w-full h-32 md:h-40 object-cover"
-                />
-                <div className="p-3 md:p-4">
-                  <h3 className="font-normal text-sm md:text-base mb-2 leading-tight" style={{ fontFamily: "'Georgia', serif" }}>
-                    Solar Panel efficiency hits 30%: A new standard for residential installations
-                  </h3>
-                  <div className="flex items-center gap-2 text-[10px] md:text-xs text-gray-500">
-                    <span>🟢</span>
-                    <span>12 fuentes</span>
-                    <span className="text-gray-400">· BBC News, The Guardian</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                <img 
-                  src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=200&fit=crop"
-                  alt="Carbon Markets"
-                  className="w-full h-32 md:h-40 object-cover"
-                />
-                <div className="p-3 md:p-4">
-                  <h3 className="font-normal text-sm md:text-base mb-2 leading-tight" style={{ fontFamily: "'Georgia', serif" }}>
-                    Carbon Credit Markets: The new volatility index for heavy industry
-                  </h3>
-                  <div className="flex items-center gap-2 text-[10px] md:text-xs text-gray-500">
-                    <span>🔴</span>
-                    <span>9 fuentes</span>
-                    <span className="text-gray-400">· Bloomberg, WSJ</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                <img 
-                  src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=200&fit=crop"
-                  alt="Circular Economy"
-                  className="w-full h-32 md:h-40 object-cover"
-                />
-                <div className="p-3 md:p-4">
-                  <h3 className="font-normal text-sm md:text-base mb-2 leading-tight" style={{ fontFamily: "'Georgia', serif" }}>
-                    Circular Economy in Tech: Why big players are pivoting to recycled materials
-                  </h3>
-                  <div className="flex items-center gap-2 text-[10px] md:text-xs text-gray-500">
-                    <span>🟡</span>
-                    <span>15 fuentes</span>
-                    <span className="text-gray-400">· TechCrunch, Wired</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Cards de noticias secundarias - Componente NewsGrid con fuente Switzer */}
+            <NewsGrid />
           </div>
         </div>
       </div>
