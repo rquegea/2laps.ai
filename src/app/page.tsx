@@ -5,6 +5,7 @@ import { StrategicSection } from '@/components/StrategicSection';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { ThemeSelector } from '@/components/ThemeSelector';
 import { TwoDayContent } from '@/components/TwoDayContent';
+import { AIModelComparison } from '@/components/2day/AIModelComparison';
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
               <p>Understand the <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#BC4E55] after:transition-all after:duration-300 hover:after:w-full">market</span></p>
               <p>before anyone else.</p>
             </div>
-            
+
             <button className="mt-6 px-6 py-3 text-sm bg-foreground text-background rounded-full hover:scale-105 transition-transform">
               Contact Us
             </button>
@@ -31,7 +32,7 @@ export default function Home() {
               2laps monitors massive quantities of global data points through an orchestration of the world's best AI models, turning market noise into the precise strategic reasoning you need to decide what to do next
             </p>
           </div>
-          
+
           {/* Segundo contenedor - imagen destacada con ventana flotante */}
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
             <InteractiveWindow
@@ -48,7 +49,11 @@ export default function Home() {
 
           {/* Secciones Strategic Reasoning */}
           <StrategicSection bgImage="/resources/s-l12001.jpg" />
-          <StrategicSection reverse={true} bgImage="/resources/RS15935_P201611_HopperE-copy_web-1.jpg" />
+          <StrategicSection reverse={true} bgImage="/resources/RS15935_P201611_HopperE-copy_web-1.jpg">
+            <div className="w-full h-full bg-white min-h-[600px] flex items-center justify-center overflow-hidden rounded-2xl">
+              <AIModelComparison />
+            </div>
+          </StrategicSection>
           <StrategicSection bgImage="/resources/large_RS18750_Addison_Manhattan-Bridge-Loop_ART500872_We.jpg" />
 
           {/* Sección Nuestra Misión */}
@@ -277,7 +282,7 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   {/* Selector de Tema */}
                   <ThemeSelector />
-                  
+
                   {/* Selector de Idioma */}
                   <LanguageSelector />
                 </div>

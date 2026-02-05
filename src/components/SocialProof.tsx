@@ -22,13 +22,13 @@ export const SocialProof = memo(function SocialProof() {
         </p>
 
         {/* Static logos - Alineados con límites izquierdo y derecho */}
-        <div className="flex justify-between items-center w-full gap-4">
+        <div className="grid grid-cols-4 gap-2 md:gap-4">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="bg-[#F3F4F6] rounded-xl px-4 flex items-center justify-center min-w-0 flex-1 h-[100px]"
+              className="bg-[#F3F4F6] rounded-xl flex items-center justify-center h-20 md:h-24"
             >
-              <span className="text-sm md:text-base lg:text-lg font-bold text-gray-900 text-center break-words">
+              <span className="text-[10px] sm:text-sm md:text-base font-bold text-gray-900 text-center break-words">
                 {logo}
               </span>
             </div>
