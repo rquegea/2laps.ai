@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "McDonald's",
-      "logo": "/brands/mcdonalds.png",
+      "domain": "mcdonalds.com",
       "consensusScore": 79,
       "mentionedByModels": 6,
       "trend": "stable",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Burger King",
-      "logo": "/brands/burgerking.png",
+      "domain": "burgerking.es",
       "consensusScore": 75,
       "mentionedByModels": 6,
       "trend": "stable",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Goiko",
-      "logo": "/brands/goiko.png",
+      "domain": "goiko.com",
       "consensusScore": 72,
       "mentionedByModels": 5,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Telepizza",
-      "logo": "/brands/telepizza.png",
+      "domain": "telepizza.es",
       "consensusScore": 61,
       "mentionedByModels": 5,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "KFC",
-      "logo": "/brands/kfc.png",
+      "domain": "kfc.es",
       "consensusScore": 65,
       "mentionedByModels": 5,
       "trend": "up",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Domino's",
-      "logo": "/brands/dominos.png",
+      "domain": "dominos.es",
       "consensusScore": 58,
       "mentionedByModels": 4,
       "trend": "down",

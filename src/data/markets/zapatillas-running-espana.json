@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Nike",
-      "logo": "/brands/nike.png",
+      "domain": "nike.com",
       "consensusScore": 86,
       "mentionedByModels": 6,
       "trend": "stable",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Asics",
-      "logo": "/brands/asics.png",
+      "domain": "asics.com",
       "consensusScore": 84,
       "mentionedByModels": 6,
       "trend": "up",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Hoka",
-      "logo": "/brands/hoka.png",
+      "domain": "hoka.com",
       "consensusScore": 80,
       "mentionedByModels": 5,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "New Balance",
-      "logo": "/brands/newbalance.png",
+      "domain": "newbalance.com",
       "consensusScore": 76,
       "mentionedByModels": 6,
       "trend": "up",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Adidas",
-      "logo": "/brands/adidas.png",
+      "domain": "adidas.com",
       "consensusScore": 69,
       "mentionedByModels": 5,
       "trend": "down",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Brooks",
-      "logo": "/brands/brooks.png",
+      "domain": "brooksrunning.com",
       "consensusScore": 64,
       "mentionedByModels": 4,
       "trend": "up",

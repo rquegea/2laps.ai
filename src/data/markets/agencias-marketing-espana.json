@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Labelium",
-      "logo": "/brands/labelium.png",
+      "domain": "labelium.com",
       "consensusScore": 76,
       "mentionedByModels": 5,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Elogia",
-      "logo": "/brands/elogia.png",
+      "domain": "elogia.net",
       "consensusScore": 73,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "T2O Media",
-      "logo": "/brands/t2o.png",
+      "domain": "t2omedia.com",
       "consensusScore": 67,
       "mentionedByModels": 4,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Kanlli",
-      "logo": "/brands/kanlli.png",
+      "domain": "kanlli.com",
       "consensusScore": 62,
       "mentionedByModels": 4,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Internet República",
-      "logo": "/brands/internetrepublica.png",
+      "domain": "internetrepublica.com",
       "consensusScore": 58,
       "mentionedByModels": 3,
       "trend": "stable",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Smartbrand",
-      "logo": "/brands/smartbrand.png",
+      "domain": "smartbrand.es",
       "consensusScore": 53,
       "mentionedByModels": 3,
       "trend": "down",

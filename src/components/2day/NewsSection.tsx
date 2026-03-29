@@ -1,7 +1,10 @@
 'use client';
 
+import Link from 'next/link';
+
 interface NewsItem {
   id: string;
+  slug: string;
   headline: string;
   summary: string;
   timeAgo: string;
@@ -12,6 +15,7 @@ interface NewsItem {
 
 const mainNews: NewsItem = {
   id: '1',
+  slug: 'google-ai-overviews-47-percent',
   headline: 'Google Reorganizes Search Results: AI Overviews Now Appear in 47% of Commercial Queries',
   summary: 'The shift marks a fundamental change in how brands gain visibility. Companies not optimized for AI-generated answers are seeing organic traffic drops of up to 30% in key verticals like insurance, travel, and consumer electronics.',
   timeAgo: 'hace 2 horas',
@@ -38,6 +42,7 @@ const latestUpdates: { time: string; text: string }[] = [
 const bottomHeadlines: NewsItem[] = [
   {
     id: '2',
+    slug: 'claude-45-financial-services-visibility',
     headline: 'Claude 4.5 Changes Recommendation Patterns: Financial Services See 18% Shift in Brand Visibility',
     summary: '',
     timeAgo: 'hace 4 horas',
@@ -46,6 +51,7 @@ const bottomHeadlines: NewsItem[] = [
   },
   {
     id: '3',
+    slug: 'gullon-tops-ai-rankings-spain',
     headline: 'Gullón Tops AI Rankings in Spanish FMCG for Third Consecutive Month',
     summary: '',
     timeAgo: 'hace 6 horas',
@@ -54,6 +60,7 @@ const bottomHeadlines: NewsItem[] = [
   },
   {
     id: '4',
+    slug: 'deepseek-r2-tech-brand-visibility',
     headline: 'DeepSeek R2 Launch Reshuffles Tech Brand Visibility in Asian Markets',
     summary: '',
     timeAgo: 'hace 8 horas',
@@ -99,9 +106,11 @@ export function NewsSection() {
                 Breaking
               </span>
             )}
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight mb-4 hover:text-[#c23b4c] cursor-pointer transition-colors">
-              {mainNews.headline}
-            </h3>
+            <Link href={`/news/${mainNews.slug}`}>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight mb-4 hover:text-[#c23b4c] cursor-pointer transition-colors">
+                {mainNews.headline}
+              </h3>
+            </Link>
 
             <div className="flex flex-col md:flex-row gap-6">
               <p className="text-base text-[#555] leading-relaxed flex-1">
@@ -127,9 +136,10 @@ export function NewsSection() {
           {/* Bottom Headlines — 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 flex-1">
             {bottomHeadlines.map((item, idx) => (
-              <div
+              <Link
                 key={item.id}
-                className={`px-4 lg:px-8 py-5 hover:bg-[#fafafa] cursor-pointer transition-colors group ${idx < bottomHeadlines.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#c0c0c0]' : ''}`}
+                href={`/news/${item.slug}`}
+                className={`px-4 lg:px-8 py-5 hover:bg-[#fafafa] transition-colors group ${idx < bottomHeadlines.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#c0c0c0]' : ''}`}
               >
                 <div className="flex items-center gap-2 mb-2.5">
                   <span
@@ -143,7 +153,7 @@ export function NewsSection() {
                 <h4 className="text-base font-semibold text-[#1a1a1a] leading-snug group-hover:text-[#c23b4c] transition-colors">
                   {item.headline}
                 </h4>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -355,7 +365,7 @@ export function NewsSection() {
       </div>
 
       {/* CTA Bar */}
-      <div className="px-4 lg:px-8 py-10 text-center bg-[#fafafa]">
+      <div className="border-t border-[#c0c0c0] px-4 lg:px-8 py-10 text-center bg-[#fafafa]">
         <p className="text-lg font-semibold text-[#1a1a1a] mb-2">
           Get AI visibility intelligence for your brand
         </p>

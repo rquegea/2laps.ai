@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "CeraVe",
-      "logo": "/brands/cerave.png",
+      "domain": "cerave.com",
       "consensusScore": 91,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "La Roche-Posay",
-      "logo": "/brands/larocheposay.png",
+      "domain": "laroche-posay.com",
       "consensusScore": 89,
       "mentionedByModels": 6,
       "trend": "up",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Nivea",
-      "logo": "/brands/nivea.png",
+      "domain": "nivea.es",
       "consensusScore": 72,
       "mentionedByModels": 6,
       "trend": "down",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Neutrogena",
-      "logo": "/brands/neutrogena.png",
+      "domain": "neutrogena.es",
       "consensusScore": 68,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Eucerin",
-      "logo": "/brands/eucerin.png",
+      "domain": "eucerin.es",
       "consensusScore": 66,
       "mentionedByModels": 5,
       "trend": "up",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Olay",
-      "logo": "/brands/olay.png",
+      "domain": "olay.com",
       "consensusScore": 54,
       "mentionedByModels": 4,
       "trend": "down",

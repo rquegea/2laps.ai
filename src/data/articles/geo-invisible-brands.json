@@ -1,0 +1,102 @@
+{
+  "slug": "geo-invisible-brands",
+  "title": "Las marcas invisibles para la IA: el nuevo riesgo que nadie mide",
+  "subtitle": "Mientras las empresas pelean por el SEO, la inteligencia artificial está recomendando a sus competidores sin que lo sepan. Así funciona la nueva economía de la visibilidad.",
+  "author": "Equipo 2laps",
+  "authorRole": "2laps Research",
+  "date": "2026-03-25",
+  "readTime": 6,
+  "category": "Análisis",
+  "coverImage": null,
+  "tags": ["GEO", "visibilidad IA", "estrategia de marca", "ChatGPT", "marketing"],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Cada día, millones de consumidores preguntan a ChatGPT, Gemini o Perplexity qué marca comprar, qué seguro contratar, qué universidad estudiar. Y cada día, la inteligencia artificial responde sin preguntar a nadie — sin banners, sin pujas, sin algoritmos de pago. Solo con lo que sabe."
+    },
+    {
+      "type": "paragraph",
+      "text": "El problema es que lo que sabe la IA no siempre refleja la realidad del mercado. Y en muchos casos, refleja la de hace dos años."
+    },
+    {
+      "type": "heading",
+      "text": "El nuevo buscador no tiene anuncios"
+    },
+    {
+      "type": "paragraph",
+      "text": "Durante veinte años, las marcas han invertido en SEO para aparecer en Google. La lógica era simple: si estás en la primera página, existes. Si no estás, no existes. Ahora esa ecuación ha cambiado radicalmente."
+    },
+    {
+      "type": "paragraph",
+      "text": "Cuando un usuario le pregunta a ChatGPT '¿cuál es el mejor seguro de coche en España?', no obtiene diez enlaces. Obtiene tres o cuatro nombres. Y esos nombres — Mapfre, Mutua Madrileña, Línea Directa — son los que el modelo ha aprendido que son relevantes a partir de millones de textos en internet."
+    },
+    {
+      "type": "paragraph",
+      "text": "No hay ranking de anuncios. No hay Quality Score. No hay forma de pagar para salir en esa respuesta. Solo hay reputación acumulada en la web, menciones en medios, presencia en foros, y la coherencia del mensaje de marca a lo largo del tiempo."
+    },
+    {
+      "type": "heading",
+      "text": "Quién aparece y quién no"
+    },
+    {
+      "type": "paragraph",
+      "text": "En los doce mercados que 2laps monitoriza actualmente en España, el patrón es consistente: las tres primeras marcas en el ranking de IA capturan más del 70% del 'share of voice'. El resto existe, pero apenas."
+    },
+    {
+      "type": "paragraph",
+      "text": "En el mercado de galletas, Gullón aparece en 6 de cada 6 modelos consultados con un consensus score de 87. Fontaneda, la segunda, aparece en 5. Pero a partir del cuarto puesto, las menciones se vuelven inconsistentes y esporádicas."
+    },
+    {
+      "type": "paragraph",
+      "text": "En el mercado legal, Garrigues y Uría Menéndez dominan con scores de 95 y 93 respectivamente — prácticamente empate técnico. Pero hay despachos con décadas de historia y clientes Fortune 500 que no aparecen en ninguna respuesta de ningún modelo."
+    },
+    {
+      "type": "heading",
+      "text": "El problema no es la IA, es la estrategia"
+    },
+    {
+      "type": "paragraph",
+      "text": "La tentación es culpar al algoritmo. Pero la realidad es más incómoda: las marcas que no aparecen en la IA son, en general, las mismas que han tenido una presencia digital fragmentada, con poca cobertura en medios especializados, poca actividad en canales que los modelos usan como fuente."
+    },
+    {
+      "type": "paragraph",
+      "text": "Los modelos de lenguaje aprenden de lo que está escrito. Si tu marca no ha generado contenido de calidad, no ha aparecido en medios relevantes, no ha sido citada en blogs de referencia — no existe para la IA. No importa cuánto hayas gastado en publicidad de pago."
+    },
+    {
+      "type": "paragraph",
+      "text": "Esto cambia completamente la lógica del marketing. Por primera vez en décadas, el dinero no puede comprar visibilidad directamente. Solo puede financiar las acciones que, a largo plazo, construyen la reputación que los modelos aprenden."
+    },
+    {
+      "type": "heading",
+      "text": "Cómo medirlo"
+    },
+    {
+      "type": "paragraph",
+      "text": "En 2laps hemos desarrollado una metodología para medir exactamente esto. Para cada mercado, lanzamos entre 10 y 20 prompts representativos de cómo un consumidor real preguntaría sobre ese sector. Los ejecutamos contra los seis modelos principales — ChatGPT, Gemini, Perplexity, Claude, Grok y DeepSeek — y analizamos qué marcas aparecen, con qué frecuencia, y con qué tono."
+    },
+    {
+      "type": "paragraph",
+      "text": "El resultado es un 'consensus score' que refleja qué tan consolidada está la presencia de una marca en el ecosistema de IA. No es un número estático: lo actualizamos periódicamente para detectar tendencias — marcas que están ganando o perdiendo visibilidad con el tiempo."
+    },
+    {
+      "type": "paragraph",
+      "text": "Es el único indicador que te dice, con datos reales, qué está recomendando la IA sobre tu mercado hoy."
+    },
+    {
+      "type": "heading",
+      "text": "El coste de no saber"
+    },
+    {
+      "type": "paragraph",
+      "text": "La mayoría de los directores de marketing con los que hablamos no saben cuál es su posición en la IA. No lo han medido nunca. Asumen que, si están bien posicionados en Google, están bien posicionados en todo."
+    },
+    {
+      "type": "paragraph",
+      "text": "Es un error que puede costar caro. A medida que el tráfico de búsqueda migra hacia los modelos de lenguaje — y todas las tendencias apuntan en esa dirección — la visibilidad en IA se convierte en el nuevo terreno de competencia. Las marcas que empiecen a trabajar esto ahora tendrán una ventaja que será muy difícil de revertir."
+    },
+    {
+      "type": "paragraph",
+      "text": "Las que esperen, descubrirán que la IA ya ha elegido a sus competidores."
+    }
+  ]
+}

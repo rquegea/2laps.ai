@@ -8,6 +8,7 @@ import { SOVChart } from '@/components/markets/SOVChart'
 import { BlurredSection } from '@/components/markets/BlurredSection'
 import { TrendChart } from '@/components/markets/TrendChart'
 import { MarketTabs } from '@/components/markets/MarketTabs'
+import { MarketCardsSection } from '@/components/markets/MarketCardsSection'
 import { ChevronRight } from 'lucide-react'
 
 interface Props {
@@ -59,78 +60,10 @@ export default function MarketPage({ params }: Props) {
           </h1>
         </div>
         {/* Sub-tabs + content */}
-        <MarketTabs marketName={market.name}>
-
-      {/* "2day in the Market" — Bloomberg style cards + treemap */}
-      <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-5">
-            {/* Left: Brand cards grid */}
-            <div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[#e0e0e0] border border-[#e0e0e0] rounded">
-                {market.rankings.slice(0, 10).map((r) => {
-                  const isUp = r.trend === 'up'
-                  const isDown = r.trend === 'down'
-                  const lineColor = isUp ? '#16a34a' : isDown ? '#dc2626' : '#999'
-                  const bgColor = isUp ? 'rgba(22,163,74,0.06)' : isDown ? 'rgba(220,38,38,0.06)' : 'transparent'
-                  // Generate fake sparkline points
-                  const points = [40, 38, 42, 35, 45, 43, 48, 44, 50, r.consensusScore]
-                    .map((v, j) => `${j * 11},${40 - (v / 100) * 38}`)
-                    .join(' ')
-                  return (
-                    <div
-                      key={r.brand}
-                      className="bg-white p-3 hover:bg-[#fafafa] transition-colors"
-                      style={{ backgroundColor: bgColor }}
-                    >
-                      <div className="text-sm font-semibold text-[#1a1a1a] truncate">{r.brand}</div>
-                      <div className="text-xs text-[#666] font-mono mt-0.5">AI Score {r.consensusScore}</div>
-                      <div className={`text-xs font-mono mt-0.5 ${isUp ? 'text-[#16a34a]' : isDown ? 'text-[#dc2626]' : 'text-[#888]'}`}>
-                        {isDown ? '\u25BC' : isUp ? '\u25B2' : ''} {Math.abs(r.trendDelta)}%
-                      </div>
-                      {/* Mini sparkline SVG */}
-                      <svg viewBox="0 0 100 40" className="w-full h-8 mt-1" preserveAspectRatio="none">
-                        <polyline
-                          points={points}
-                          fill="none"
-                          stroke={lineColor}
-                          strokeWidth="1.5"
-                          vectorEffect="non-scaling-stroke"
-                        />
-                      </svg>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* Right: Treemap */}
-            <div className="hidden lg:block">
-              <div className="h-full grid grid-cols-3 grid-rows-4 gap-px rounded overflow-hidden" style={{ minHeight: 280 }}>
-                {market.rankings.slice(0, 10).map((r, i) => {
-                  const isUp = r.trend === 'up'
-                  const isDown = r.trend === 'down'
-                  const bg = isUp ? 'bg-[#bbf7d0]' : isDown ? 'bg-[#fecaca]' : 'bg-[#f5f5f5]'
-                  const text = isUp ? 'text-[#166534]' : isDown ? 'text-[#991b1b]' : 'text-[#666]'
-                  // Top brands get bigger cells
-                  const span = i === 0 ? 'col-span-2 row-span-2' : i < 3 ? 'col-span-1 row-span-1' : 'col-span-1 row-span-1'
-                  return (
-                    <div
-                      key={r.brand}
-                      className={`${bg} ${span} flex flex-col items-center justify-center p-1.5`}
-                    >
-                      <span className={`text-[10px] font-semibold ${text} truncate max-w-full`}>{r.brand}</span>
-                      <span className={`text-[9px] font-mono ${text}`}>
-                        {isDown ? '\u25BC' : isUp ? '\u25B2' : ''}{Math.abs(r.trendDelta)}%
-                      </span>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <MarketTabs
+          marketName={market.name}
+          cardContent={<MarketCardsSection rankings={market.rankings} />}
+        >
 
       {/* Summary stats bar */}
       <div className="border-b border-[#c0c0c0] bg-[#f8f8f8]">

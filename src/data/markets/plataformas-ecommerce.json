@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Shopify",
-      "logo": "/brands/shopify.png",
+      "domain": "shopify.com",
       "consensusScore": 89,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "WooCommerce",
-      "logo": "/brands/woocommerce.png",
+      "domain": "woocommerce.com",
       "consensusScore": 82,
       "mentionedByModels": 6,
       "trend": "stable",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "PrestaShop",
-      "logo": "/brands/prestashop.png",
+      "domain": "prestashop.com",
       "consensusScore": 71,
       "mentionedByModels": 5,
       "trend": "down",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Magento",
-      "logo": "/brands/magento.png",
+      "domain": "magento.com",
       "consensusScore": 63,
       "mentionedByModels": 5,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "BigCommerce",
-      "logo": "/brands/bigcommerce.png",
+      "domain": "bigcommerce.com",
       "consensusScore": 56,
       "mentionedByModels": 3,
       "trend": "stable",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Wix",
-      "logo": "/brands/wix.png",
+      "domain": "wix.com",
       "consensusScore": 52,
       "mentionedByModels": 4,
       "trend": "up",

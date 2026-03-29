@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Openbank",
-      "logo": "/brands/openbank.png",
+      "domain": "openbank.es",
       "consensusScore": 85,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "ING",
-      "logo": "/brands/ing.png",
+      "domain": "ing.es",
       "consensusScore": 82,
       "mentionedByModels": 6,
       "trend": "down",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "N26",
-      "logo": "/brands/n26.png",
+      "domain": "n26.com",
       "consensusScore": 73,
       "mentionedByModels": 5,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Revolut",
-      "logo": "/brands/revolut.png",
+      "domain": "revolut.com",
       "consensusScore": 70,
       "mentionedByModels": 5,
       "trend": "up",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "BBVA Online",
-      "logo": "/brands/bbva.png",
+      "domain": "bbva.es",
       "consensusScore": 66,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "EVO Banco",
-      "logo": "/brands/evo.png",
+      "domain": "evobanco.com",
       "consensusScore": 58,
       "mentionedByModels": 3,
       "trend": "down",

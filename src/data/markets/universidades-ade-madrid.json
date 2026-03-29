@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "IE University",
-      "logo": "/brands/ie.png",
+      "domain": "ie.edu",
       "consensusScore": 92,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "ESADE (Madrid)",
-      "logo": "/brands/esade.png",
+      "domain": "esade.edu",
       "consensusScore": 85,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Comillas ICADE",
-      "logo": "/brands/icade.png",
+      "domain": "comillas.edu",
       "consensusScore": 81,
       "mentionedByModels": 6,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "EAE Business School",
-      "logo": "/brands/eae.png",
+      "domain": "eae.es",
       "consensusScore": 68,
       "mentionedByModels": 4,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "CUNEF Universidad",
-      "logo": "/brands/cunef.png",
+      "domain": "cunef.edu",
       "consensusScore": 74,
       "mentionedByModels": 5,
       "trend": "up",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Universidad Carlos III",
-      "logo": "/brands/uc3m.png",
+      "domain": "uc3m.es",
       "consensusScore": 77,
       "mentionedByModels": 6,
       "trend": "stable",

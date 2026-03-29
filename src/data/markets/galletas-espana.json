@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Gullón",
-      "logo": "/brands/gullon.png",
+      "domain": "gullon.es",
       "consensusScore": 87,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Fontaneda",
-      "logo": "/brands/fontaneda.png",
+      "domain": "fontaneda.es",
       "consensusScore": 71,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Lotus",
-      "logo": "/brands/lotus.png",
+      "domain": "lotusbakeries.com",
       "consensusScore": 64,
       "mentionedByModels": 4,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Oreo",
-      "logo": "/brands/oreo.png",
+      "domain": "oreo.com",
       "consensusScore": 58,
       "mentionedByModels": 5,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Marbú",
-      "logo": "/brands/marbu.png",
+      "domain": "marbu.es",
       "consensusScore": 52,
       "mentionedByModels": 3,
       "trend": "down",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Cuétara",
-      "logo": "/brands/cuetara.png",
+      "domain": "cuetara.com",
       "consensusScore": 49,
       "mentionedByModels": 4,
       "trend": "stable",

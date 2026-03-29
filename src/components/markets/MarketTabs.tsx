@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, type ReactNode } from 'react'
-import { Lock } from 'lucide-react'
+import { useState, useRef, useEffect, type ReactNode } from 'react'
+import { Lock, ChevronUp, ChevronDown } from 'lucide-react'
 
 const tabs = [
   { id: 'visibility', label: 'Visibility' },
@@ -13,8 +13,23 @@ const tabs = [
   { id: 'citations', label: 'Citations' },
 ]
 
-export function MarketTabs({ children, marketName }: { children: ReactNode; marketName: string }) {
+interface Props {
+  children: ReactNode
+  marketName: string
+  cardContent: ReactNode
+}
+
+export function MarketTabs({ children, marketName, cardContent }: Props) {
   const [activeTab, setActiveTab] = useState('visibility')
+  const [collapsed, setCollapsed] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [cardHeight, setCardHeight] = useState<number | undefined>(undefined)
+
+  useEffect(() => {
+    if (cardRef.current) {
+      setCardHeight(cardRef.current.scrollHeight)
+    }
+  }, [cardContent])
 
   return (
     <>
@@ -26,17 +41,10 @@ export function MarketTabs({ children, marketName }: { children: ReactNode; mark
             className={`py-2.5 text-sm whitespace-nowrap flex items-center gap-1.5 transition-colors ${
               activeTab === tab.id
                 ? 'text-[#1a1a1a] font-medium border-b-2 border-[#c23b4c]'
-                : tab.soon
-                  ? 'text-[#bbb] hover:text-[#999]'
-                  : 'text-[#666] hover:text-[#1a1a1a]'
+                : 'text-[#666] hover:text-[#1a1a1a]'
             }`}
           >
             {tab.label}
-            {tab.soon && (
-              <span className="text-[10px] border border-[#ddd] text-[#aaa] px-1.5 py-0.5 rounded-full leading-none">
-                Soon
-              </span>
-            )}
           </button>
         ))}
       </div>
@@ -45,11 +53,37 @@ export function MarketTabs({ children, marketName }: { children: ReactNode; mark
 
       {activeTab === 'visibility' ? (
         <>
-          <div className="px-4 lg:px-8 pt-5 pb-3">
-            <h2 className="text-lg font-semibold text-[#1a1a1a]">
-              2day in the {marketName} market
-            </h2>
+          {/* Collapsible cards section */}
+          <div className="border-b border-[#c0c0c0] bg-[#f2f2f2]">
+            <div className="px-4 lg:px-8 pt-5 pb-3 flex items-center justify-between">
+              <h2 className="text-3xl font-semibold text-[#1a1a1a]">
+                2day in the {marketName} market
+              </h2>
+              <button
+                onClick={() => setCollapsed(c => !c)}
+                className="text-[#888] hover:text-[#1a1a1a] transition-colors p-1"
+              >
+                {collapsed ? <ChevronDown className="w-5 h-5" /> : <ChevronUp className="w-5 h-5" />}
+              </button>
+            </div>
+            <div
+              ref={cardRef}
+              style={{
+                maxHeight: collapsed ? 0 : (cardHeight ? cardHeight + 16 : 9999),
+                overflow: collapsed ? 'hidden' : 'visible',
+                transition: 'max-height 0.22s ease',
+              }}
+            >
+              <div style={{
+                opacity: collapsed ? 0 : 1,
+                transition: 'opacity 0.18s ease',
+              }}>
+                {cardContent}
+              </div>
+            </div>
           </div>
+
+          {/* Always-visible content below */}
           {children}
         </>
       ) : (

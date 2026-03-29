@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Mapfre",
-      "logo": "/brands/mapfre.png",
+      "domain": "mapfre.es",
       "consensusScore": 83,
       "mentionedByModels": 6,
       "trend": "stable",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Mutua Madrileña",
-      "logo": "/brands/mutua.png",
+      "domain": "mutua-madrilena.es",
       "consensusScore": 80,
       "mentionedByModels": 6,
       "trend": "up",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Línea Directa",
-      "logo": "/brands/lineadirecta.png",
+      "domain": "lineadirecta.com",
       "consensusScore": 74,
       "mentionedByModels": 5,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "AXA",
-      "logo": "/brands/axa.png",
+      "domain": "axa.es",
       "consensusScore": 67,
       "mentionedByModels": 5,
       "trend": "down",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Allianz",
-      "logo": "/brands/allianz.png",
+      "domain": "allianz.es",
       "consensusScore": 62,
       "mentionedByModels": 4,
       "trend": "stable",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Pelayo",
-      "logo": "/brands/pelayo.png",
+      "domain": "pelayo.com",
       "consensusScore": 55,
       "mentionedByModels": 3,
       "trend": "down",

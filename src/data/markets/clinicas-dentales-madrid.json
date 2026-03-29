@@ -15,7 +15,7 @@
     {
       "position": 1,
       "brand": "Sanitas Dental",
-      "logo": "/brands/sanitas.png",
+      "domain": "sanitas.es",
       "consensusScore": 78,
       "mentionedByModels": 6,
       "trend": "up",
@@ -24,7 +24,7 @@
     {
       "position": 2,
       "brand": "Vitaldent",
-      "logo": "/brands/vitaldent.png",
+      "domain": "vitaldent.com",
       "consensusScore": 69,
       "mentionedByModels": 5,
       "trend": "down",
@@ -33,7 +33,7 @@
     {
       "position": 3,
       "brand": "Quirónsalud Dental",
-      "logo": "/brands/quironsalud.png",
+      "domain": "quironsalud.es",
       "consensusScore": 74,
       "mentionedByModels": 5,
       "trend": "up",
@@ -42,7 +42,7 @@
     {
       "position": 4,
       "brand": "Adeslas Dental",
-      "logo": "/brands/adeslas.png",
+      "domain": "adeslas.es",
       "consensusScore": 65,
       "mentionedByModels": 5,
       "trend": "stable",
@@ -51,7 +51,7 @@
     {
       "position": 5,
       "brand": "Caser Dental",
-      "logo": "/brands/caser.png",
+      "domain": "caser.es",
       "consensusScore": 57,
       "mentionedByModels": 3,
       "trend": "stable",
@@ -60,7 +60,7 @@
     {
       "position": 6,
       "brand": "Dentix",
-      "logo": "/brands/dentix.png",
+      "domain": "dentix.com",
       "consensusScore": 42,
       "mentionedByModels": 4,
       "trend": "down",

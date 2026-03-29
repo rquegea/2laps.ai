@@ -20,6 +20,7 @@ export interface Ranking {
   position: number
   brand: string
   logo?: string
+  domain?: string
   consensusScore: number
   mentionedByModels: number
   trend: TrendDirection
