@@ -2,12 +2,13 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { getMarketBySlug, getMarketSlugs } from '@/lib/data'
-import { countryFlag, formatDate } from '@/lib/utils'
+import { countryFlag, formatDate, trendArrow, trendColor } from '@/lib/utils'
 import { RankingTable } from '@/components/markets/RankingTable'
 import { SOVChart } from '@/components/markets/SOVChart'
 import { BlurredSection } from '@/components/markets/BlurredSection'
 import { TrendChart } from '@/components/markets/TrendChart'
-import { ChevronRight, Calendar, MessageSquare, Bot } from 'lucide-react'
+import { MarketTabs } from '@/components/markets/MarketTabs'
+import { ChevronRight } from 'lucide-react'
 
 interface Props {
   params: { slug: string }
@@ -32,12 +33,14 @@ export default function MarketPage({ params }: Props) {
   if (!market) notFound()
 
   const topBrands = market.rankings.slice(0, 4).map(r => r.brand)
+  const topRanked = market.rankings[0]
+  const avgScore = Math.round(market.rankings.reduce((sum, r) => sum + r.consensusScore, 0) / market.rankings.length)
 
   return (
     <div>
       {/* Breadcrumb */}
       <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-3">
+        <div className="px-4 lg:px-8 py-2">
           <nav className="flex items-center gap-1 text-xs text-[#888]">
             <Link href="/" className="hover:text-[#1a1a1a] transition-colors">Inicio</Link>
             <ChevronRight className="w-3 h-3" />
@@ -48,63 +51,168 @@ export default function MarketPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Header */}
-      <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-2">
-            {countryFlag(market.country)} {market.name}
+      {/* Bloomberg-style Header */}
+      <div className="border-b border-[#1a1a1a]">
+        <div className="px-4 lg:px-8 pt-6 pb-4">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[#1a1a1a] tracking-tight font-sans">
+            {market.name}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-[#888]">
-            <span className="bg-[#f5f5f5] border border-[#c0c0c0] px-2 py-1 rounded uppercase tracking-wider">
-              {market.sector}
-            </span>
-            <span className="flex items-center gap-1">
-              <Calendar className="w-3 h-3" />
-              {formatDate(market.lastUpdated)}
-            </span>
-            <span className="flex items-center gap-1">
-              <MessageSquare className="w-3 h-3" />
-              {market.promptsTracked} prompts
-            </span>
-            <span className="flex items-center gap-1">
-              <Bot className="w-3 h-3" />
-              {market.aiModels.length} modelos IA
-            </span>
-          </div>
         </div>
-      </div>
+        {/* Sub-tabs + content */}
+        <MarketTabs marketName={market.name}>
 
-      {/* Prompts Section */}
+      {/* "2day in the Market" — Bloomberg style cards + treemap */}
       <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
-            Prompts analizados
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {market.prompts.map((prompt, i) => (
-              <div key={i} className="border border-[#c0c0c0] rounded-lg p-3 bg-[#fafafa]">
-                <span className="text-xs font-mono text-accent-blue mr-2">P{i + 1}</span>
-                <span className="text-sm text-[#444]">&quot;{prompt}&quot;</span>
+        <div className="px-4 lg:px-8 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-5">
+            {/* Left: Brand cards grid */}
+            <div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[#e0e0e0] border border-[#e0e0e0] rounded">
+                {market.rankings.slice(0, 10).map((r) => {
+                  const isUp = r.trend === 'up'
+                  const isDown = r.trend === 'down'
+                  const lineColor = isUp ? '#16a34a' : isDown ? '#dc2626' : '#999'
+                  const bgColor = isUp ? 'rgba(22,163,74,0.06)' : isDown ? 'rgba(220,38,38,0.06)' : 'transparent'
+                  // Generate fake sparkline points
+                  const points = [40, 38, 42, 35, 45, 43, 48, 44, 50, r.consensusScore]
+                    .map((v, j) => `${j * 11},${40 - (v / 100) * 38}`)
+                    .join(' ')
+                  return (
+                    <div
+                      key={r.brand}
+                      className="bg-white p-3 hover:bg-[#fafafa] transition-colors"
+                      style={{ backgroundColor: bgColor }}
+                    >
+                      <div className="text-sm font-semibold text-[#1a1a1a] truncate">{r.brand}</div>
+                      <div className="text-xs text-[#666] font-mono mt-0.5">AI Score {r.consensusScore}</div>
+                      <div className={`text-xs font-mono mt-0.5 ${isUp ? 'text-[#16a34a]' : isDown ? 'text-[#dc2626]' : 'text-[#888]'}`}>
+                        {isDown ? '\u25BC' : isUp ? '\u25B2' : ''} {Math.abs(r.trendDelta)}%
+                      </div>
+                      {/* Mini sparkline SVG */}
+                      <svg viewBox="0 0 100 40" className="w-full h-8 mt-1" preserveAspectRatio="none">
+                        <polyline
+                          points={points}
+                          fill="none"
+                          stroke={lineColor}
+                          strokeWidth="1.5"
+                          vectorEffect="non-scaling-stroke"
+                        />
+                      </svg>
+                    </div>
+                  )
+                })}
               </div>
-            ))}
+            </div>
+
+            {/* Right: Treemap */}
+            <div className="hidden lg:block">
+              <div className="h-full grid grid-cols-3 grid-rows-4 gap-px rounded overflow-hidden" style={{ minHeight: 280 }}>
+                {market.rankings.slice(0, 10).map((r, i) => {
+                  const isUp = r.trend === 'up'
+                  const isDown = r.trend === 'down'
+                  const bg = isUp ? 'bg-[#bbf7d0]' : isDown ? 'bg-[#fecaca]' : 'bg-[#f5f5f5]'
+                  const text = isUp ? 'text-[#166534]' : isDown ? 'text-[#991b1b]' : 'text-[#666]'
+                  // Top brands get bigger cells
+                  const span = i === 0 ? 'col-span-2 row-span-2' : i < 3 ? 'col-span-1 row-span-1' : 'col-span-1 row-span-1'
+                  return (
+                    <div
+                      key={r.brand}
+                      className={`${bg} ${span} flex flex-col items-center justify-center p-1.5`}
+                    >
+                      <span className={`text-[10px] font-semibold ${text} truncate max-w-full`}>{r.brand}</span>
+                      <span className={`text-[9px] font-mono ${text}`}>
+                        {isDown ? '\u25BC' : isUp ? '\u25B2' : ''}{Math.abs(r.trendDelta)}%
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* FREE: Ranking Table */}
-      <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
-            Ranking de marcas
-          </h2>
-          <RankingTable rankings={market.rankings} totalModels={market.aiModels.length} />
+      {/* Summary stats bar */}
+      <div className="border-b border-[#c0c0c0] bg-[#f8f8f8]">
+        <div className="px-4 lg:px-8 py-3 flex flex-wrap gap-6 text-xs">
+          <div>
+            <span className="text-[#888] uppercase tracking-wider">Marcas rastreadas</span>
+            <span className="ml-2 font-mono font-bold text-[#1a1a1a]">{market.rankings.length}</span>
+          </div>
+          <div>
+            <span className="text-[#888] uppercase tracking-wider">Score medio</span>
+            <span className="ml-2 font-mono font-bold text-[#1a1a1a]">{avgScore}</span>
+          </div>
+          <div>
+            <span className="text-[#888] uppercase tracking-wider">Modelos IA</span>
+            <span className="ml-2 font-mono font-bold text-[#1a1a1a]">{market.aiModels.length}</span>
+          </div>
+          <div>
+            <span className="text-[#888] uppercase tracking-wider">Prompts</span>
+            <span className="ml-2 font-mono font-bold text-[#1a1a1a]">{market.promptsTracked}</span>
+          </div>
+          <div>
+            <span className="text-[#888] uppercase tracking-wider">SOV Lider</span>
+            <span className="ml-2 font-mono font-bold text-[#3B82F6]">{market.sovDistribution[0]?.sov}%</span>
+          </div>
         </div>
       </div>
 
-      {/* FREE: Share of Voice */}
+      {/* Two-column: Prompts + Ranking Table */}
       <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
+        <div className="px-4 lg:px-8 py-5">
+          <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
+            {/* Left: Prompts analyzed */}
+            <div>
+              <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest mb-3">
+                Prompts analizados
+              </h2>
+              <div className="space-y-2">
+                {market.prompts.map((prompt, i) => (
+                  <div key={i} className="border border-[#ddd] rounded p-2.5 bg-white hover:border-[#999] transition-colors">
+                    <div className="flex items-start gap-2">
+                      <span className="text-[10px] font-mono text-[#3B82F6] bg-[#3B82F6]/10 px-1.5 py-0.5 rounded shrink-0">
+                        P{i + 1}
+                      </span>
+                      <span className="text-xs text-[#444] leading-relaxed">&quot;{prompt}&quot;</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* AI Models tracked */}
+              <div className="mt-5">
+                <h3 className="text-xs font-semibold text-[#888] uppercase tracking-widest mb-3">
+                  Modelos rastreados
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {market.aiModels.map(model => (
+                    <span
+                      key={model}
+                      className="text-[10px] font-mono px-2 py-1 bg-[#1a1a1a] text-white rounded capitalize"
+                    >
+                      {model}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Rankings Table */}
+            <div>
+              <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest mb-3">
+                Ranking de marcas
+              </h2>
+              <RankingTable rankings={market.rankings} totalModels={market.aiModels.length} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Share of Voice */}
+      <div className="border-b border-[#c0c0c0]">
+        <div className="px-4 lg:px-8 py-5">
+          <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest mb-3">
             Share of Voice
           </h2>
           <SOVChart data={market.sovDistribution} />
@@ -113,92 +221,130 @@ export default function MarketPage({ params }: Props) {
 
       {/* PREMIUM: Trend Over Time (blurred) */}
       <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
-            Tendencia mensual
-          </h2>
+        <div className="px-4 lg:px-8 py-5">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest">
+              Tendencia mensual
+            </h2>
+            <span className="text-[10px] font-mono text-[#c23b4c] bg-[#c23b4c]/10 px-2 py-0.5 rounded uppercase tracking-wider">
+              Premium
+            </span>
+          </div>
           <BlurredSection title="Desbloquea tendencias">
             <TrendChart data={market.trendOverTime} brands={topBrands} />
           </BlurredSection>
         </div>
       </div>
 
-      {/* PREMIUM: Sentiment (blurred) */}
+      {/* PREMIUM: Sentiment + SOV by Model — side by side on desktop */}
       <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
-            Analisis de sentimiento
-          </h2>
-          <BlurredSection title="Desbloquea sentimiento">
-            <div className="space-y-3 py-4">
-              {market.sentimentByBrand.slice(0, 4).map(s => (
-                <div key={s.brand} className="flex items-center gap-3">
-                  <span className="w-28 text-sm text-[#1a1a1a] truncate">{s.brand}</span>
-                  <div className="flex-1 flex h-4 rounded overflow-hidden">
-                    <div className="bg-emerald-500" style={{ width: `${s.positive}%` }} />
-                    <div className="bg-amber-400" style={{ width: `${s.neutral}%` }} />
-                    <div className="bg-red-500" style={{ width: `${s.negative}%` }} />
+        <div className="px-4 lg:px-8 py-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Sentiment */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest">
+                  Analisis de sentimiento
+                </h2>
+                <span className="text-[10px] font-mono text-[#c23b4c] bg-[#c23b4c]/10 px-2 py-0.5 rounded uppercase tracking-wider">
+                  Premium
+                </span>
+              </div>
+              <BlurredSection title="Desbloquea sentimiento">
+                <div className="space-y-3 py-4">
+                  {market.sentimentByBrand.slice(0, 4).map(s => (
+                    <div key={s.brand} className="flex items-center gap-3">
+                      <span className="w-24 text-xs text-[#1a1a1a] truncate font-medium">{s.brand}</span>
+                      <div className="flex-1 flex h-5 rounded overflow-hidden">
+                        <div className="bg-emerald-500 flex items-center justify-center" style={{ width: `${s.positive}%` }}>
+                          <span className="text-[9px] text-white font-mono">{s.positive}%</span>
+                        </div>
+                        <div className="bg-amber-400 flex items-center justify-center" style={{ width: `${s.neutral}%` }}>
+                          <span className="text-[9px] text-white font-mono">{s.neutral}%</span>
+                        </div>
+                        <div className="bg-red-500 flex items-center justify-center" style={{ width: `${s.negative}%` }}>
+                          <span className="text-[9px] text-white font-mono">{s.negative}%</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="flex items-center gap-4 mt-2 text-[10px] text-[#888]">
+                    <span className="flex items-center gap-1"><span className="w-2 h-2 bg-emerald-500 rounded-full inline-block" /> Positivo</span>
+                    <span className="flex items-center gap-1"><span className="w-2 h-2 bg-amber-400 rounded-full inline-block" /> Neutro</span>
+                    <span className="flex items-center gap-1"><span className="w-2 h-2 bg-red-500 rounded-full inline-block" /> Negativo</span>
                   </div>
                 </div>
-              ))}
+              </BlurredSection>
             </div>
-          </BlurredSection>
-        </div>
-      </div>
 
-      {/* PREMIUM: SOV by Model (blurred) */}
-      <div className="border-b border-[#c0c0c0]">
-        <div className="px-4 lg:px-8 py-6">
-          <h2 className="text-sm font-semibold text-[#888] uppercase tracking-wider mb-3">
-            Desglose por modelo IA
-          </h2>
-          <BlurredSection title="Desbloquea desglose por IA">
-            <div className="overflow-x-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr className="border-b border-[#c0c0c0]">
-                    <th className="text-left py-2 px-2 text-[#888]">Modelo</th>
-                    {topBrands.map(b => (
-                      <th key={b} className="text-center py-2 px-2 text-[#888]">{b}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {market.sovByModel.map(row => (
-                    <tr key={row.model} className="border-b border-[#eee]">
-                      <td className="py-2 px-2 text-[#1a1a1a] capitalize">{row.model}</td>
-                      {topBrands.map(b => (
-                        <td key={b} className="text-center py-2 px-2 font-mono text-[#666]">
-                          {(row as Record<string, number | string>)[b] ?? '-'}
-                        </td>
+            {/* SOV by Model */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-xs font-semibold text-[#888] uppercase tracking-widest">
+                  Desglose por modelo IA
+                </h2>
+                <span className="text-[10px] font-mono text-[#c23b4c] bg-[#c23b4c]/10 px-2 py-0.5 rounded uppercase tracking-wider">
+                  Premium
+                </span>
+              </div>
+              <BlurredSection title="Desbloquea desglose por IA">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs">
+                    <thead>
+                      <tr className="border-b border-[#1a1a1a]">
+                        <th className="text-left py-2 px-2 text-[#888] uppercase tracking-wider text-[10px]">Modelo</th>
+                        {topBrands.map(b => (
+                          <th key={b} className="text-center py-2 px-2 text-[#888] uppercase tracking-wider text-[10px]">{b}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {market.sovByModel.map((row, i) => (
+                        <tr key={row.model} className={`border-b ${i % 2 === 0 ? 'bg-[#fafafa]' : 'bg-white'} border-[#eee]`}>
+                          <td className="py-2 px-2 text-[#1a1a1a] capitalize font-medium">{row.model}</td>
+                          {topBrands.map(b => {
+                            const val = (row as Record<string, number | string>)[b]
+                            return (
+                              <td key={b} className="text-center py-2 px-2 font-mono text-[#444]">
+                                {val != null ? `${val}%` : '-'}
+                              </td>
+                            )
+                          })}
+                        </tr>
                       ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                    </tbody>
+                  </table>
+                </div>
+              </BlurredSection>
             </div>
-          </BlurredSection>
+          </div>
         </div>
       </div>
 
       {/* CTA */}
-      <div className="px-4 lg:px-8 py-12 text-center">
-        <div className="border border-[#c0c0c0] rounded-lg p-8 max-w-xl mx-auto">
+      <div className="px-4 lg:px-8 py-10">
+        <div className="border-2 border-[#1a1a1a] rounded-lg p-8 max-w-2xl mx-auto text-center bg-[#fafafa]">
           <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">
-            Quieres el analisis completo?
+            Quieres el analisis completo de {market.name}?
           </h3>
-          <p className="text-sm text-[#666] mb-4">
-            Desbloquea tendencias, sentimiento, desglose por modelo y recomendaciones estrategicas.
+          <p className="text-sm text-[#666] mb-5 max-w-md mx-auto">
+            Desbloquea tendencias, sentimiento, desglose por modelo y recomendaciones estrategicas para tu mercado.
           </p>
           <a
             href="https://calendly.com/rodrigo-quesada-trucoytrufa/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-2.5 bg-[#c23b4c] text-white text-sm rounded hover:bg-[#a83242] transition-colors"
+            className="inline-block px-8 py-3 bg-[#c23b4c] text-white text-sm font-semibold rounded hover:bg-[#a83242] transition-colors"
           >
             Reservar 20 minutos
           </a>
+          <p className="text-[10px] text-[#888] mt-3">
+            Sin compromiso. Te mostramos tu mercado completo en la llamada.
+          </p>
         </div>
+      </div>
+
+        </MarketTabs>
       </div>
     </div>
   )

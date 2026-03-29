@@ -7,7 +7,13 @@
       "Bash(xargs sed:*)",
       "Bash(npx next:*)",
       "Bash(pnpm dev:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx tsc:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(lsof +D /Users/macbook/Desktop/2laps.ai/.next)",
+      "Bash(xargs kill -9)"
     ]
   }
 }
