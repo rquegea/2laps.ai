@@ -1,0 +1,110 @@
+{
+  "id": "clinicas-dentales-madrid",
+  "name": "Clínicas Dentales Madrid",
+  "country": "ES",
+  "sector": "Salud",
+  "lastUpdated": "2026-03-21",
+  "promptsTracked": 13,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores clínicas dentales en Madrid?",
+    "Mejores dentistas en Madrid con buenas opiniones",
+    "¿Qué clínica dental en Madrid recomiendas para ortodoncia invisible?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Sanitas Dental",
+      "logo": "/brands/sanitas.png",
+      "consensusScore": 78,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 2,
+      "brand": "Vitaldent",
+      "logo": "/brands/vitaldent.png",
+      "consensusScore": 69,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -8
+    },
+    {
+      "position": 3,
+      "brand": "Quirónsalud Dental",
+      "logo": "/brands/quironsalud.png",
+      "consensusScore": 74,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 6
+    },
+    {
+      "position": 4,
+      "brand": "Adeslas Dental",
+      "logo": "/brands/adeslas.png",
+      "consensusScore": 65,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 5,
+      "brand": "Caser Dental",
+      "logo": "/brands/caser.png",
+      "consensusScore": 57,
+      "mentionedByModels": 3,
+      "trend": "stable",
+      "trendDelta": 2
+    },
+    {
+      "position": 6,
+      "brand": "Dentix",
+      "logo": "/brands/dentix.png",
+      "consensusScore": 42,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -12
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Sanitas Dental", "sov": 25 },
+    { "brand": "Quirónsalud Dental", "sov": 21 },
+    { "brand": "Vitaldent", "sov": 18 },
+    { "brand": "Adeslas Dental", "sov": 17 },
+    { "brand": "Caser Dental", "sov": 11 },
+    { "brand": "Dentix", "sov": 8 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Sanitas Dental": 74, "Vitaldent": 76, "Quirónsalud Dental": 69, "Adeslas Dental": 64, "Caser Dental": 55, "Dentix": 53 } },
+    { "month": "2025-11", "scores": { "Sanitas Dental": 75, "Vitaldent": 74, "Quirónsalud Dental": 70, "Adeslas Dental": 64, "Caser Dental": 55, "Dentix": 50 } },
+    { "month": "2025-12", "scores": { "Sanitas Dental": 76, "Vitaldent": 72, "Quirónsalud Dental": 71, "Adeslas Dental": 65, "Caser Dental": 56, "Dentix": 48 } },
+    { "month": "2026-01", "scores": { "Sanitas Dental": 77, "Vitaldent": 71, "Quirónsalud Dental": 72, "Adeslas Dental": 65, "Caser Dental": 56, "Dentix": 46 } },
+    { "month": "2026-02", "scores": { "Sanitas Dental": 78, "Vitaldent": 70, "Quirónsalud Dental": 73, "Adeslas Dental": 65, "Caser Dental": 57, "Dentix": 44 } },
+    { "month": "2026-03", "scores": { "Sanitas Dental": 78, "Vitaldent": 69, "Quirónsalud Dental": 74, "Adeslas Dental": 65, "Caser Dental": 57, "Dentix": 42 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Sanitas Dental", "positive": 65, "neutral": 27, "negative": 8 },
+    { "brand": "Vitaldent", "positive": 38, "neutral": 30, "negative": 32 },
+    { "brand": "Quirónsalud Dental", "positive": 68, "neutral": 24, "negative": 8 },
+    { "brand": "Adeslas Dental", "positive": 50, "neutral": 35, "negative": 15 },
+    { "brand": "Caser Dental", "positive": 48, "neutral": 40, "negative": 12 },
+    { "brand": "Dentix", "positive": 22, "neutral": 28, "negative": 50 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Sanitas Dental": 26, "Quirónsalud Dental": 22, "Vitaldent": 18, "Adeslas Dental": 16, "Caser Dental": 10, "Dentix": 8 } },
+    { "model": "gemini", "distribution": { "Sanitas Dental": 24, "Quirónsalud Dental": 20, "Vitaldent": 19, "Adeslas Dental": 18, "Caser Dental": 11, "Dentix": 8 } },
+    { "model": "perplexity", "distribution": { "Sanitas Dental": 25, "Quirónsalud Dental": 22, "Vitaldent": 17, "Adeslas Dental": 17, "Caser Dental": 11, "Dentix": 8 } },
+    { "model": "claude", "distribution": { "Sanitas Dental": 26, "Quirónsalud Dental": 21, "Vitaldent": 18, "Adeslas Dental": 17, "Caser Dental": 12, "Dentix": 6 } },
+    { "model": "grok", "distribution": { "Sanitas Dental": 24, "Quirónsalud Dental": 20, "Vitaldent": 19, "Adeslas Dental": 17, "Caser Dental": 11, "Dentix": 9 } },
+    { "model": "deepseek", "distribution": { "Sanitas Dental": 25, "Quirónsalud Dental": 21, "Vitaldent": 18, "Adeslas Dental": 17, "Caser Dental": 11, "Dentix": 8 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Sanitas Dental", "sources": ["sanitas.es", "Google Maps Reviews", "Doctoralia.es"] },
+    { "brand": "Vitaldent", "sources": ["vitaldent.com", "Google Maps Reviews", "OCU.org"] },
+    { "brand": "Quirónsalud Dental", "sources": ["quironsalud.es", "Doctoralia.es"] },
+    { "brand": "Adeslas Dental", "sources": ["adeslas.es", "Google Maps Reviews"] },
+    { "brand": "Caser Dental", "sources": ["caser.es", "Doctoralia.es"] },
+    { "brand": "Dentix", "sources": ["Google Maps Reviews", "OCU.org", "Facua.org"] }
+  ]
+}

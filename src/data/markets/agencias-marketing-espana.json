@@ -1,0 +1,110 @@
+{
+  "id": "agencias-marketing-espana",
+  "name": "Agencias Marketing Digital",
+  "country": "ES",
+  "sector": "Marketing",
+  "lastUpdated": "2026-03-19",
+  "promptsTracked": 11,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores agencias de marketing digital en España?",
+    "Mejores agencias de publicidad digital y performance en España",
+    "¿Qué agencia de marketing online recomiendas para una empresa mediana en España?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Labelium",
+      "logo": "/brands/labelium.png",
+      "consensusScore": 76,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 6
+    },
+    {
+      "position": 2,
+      "brand": "Elogia",
+      "logo": "/brands/elogia.png",
+      "consensusScore": 73,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 2
+    },
+    {
+      "position": 3,
+      "brand": "T2O Media",
+      "logo": "/brands/t2o.png",
+      "consensusScore": 67,
+      "mentionedByModels": 4,
+      "trend": "up",
+      "trendDelta": 8
+    },
+    {
+      "position": 4,
+      "brand": "Kanlli",
+      "logo": "/brands/kanlli.png",
+      "consensusScore": 62,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -3
+    },
+    {
+      "position": 5,
+      "brand": "Internet República",
+      "logo": "/brands/internetrepublica.png",
+      "consensusScore": 58,
+      "mentionedByModels": 3,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 6,
+      "brand": "Smartbrand",
+      "logo": "/brands/smartbrand.png",
+      "consensusScore": 53,
+      "mentionedByModels": 3,
+      "trend": "down",
+      "trendDelta": -2
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Labelium", "sov": 24 },
+    { "brand": "Elogia", "sov": 22 },
+    { "brand": "T2O Media", "sov": 18 },
+    { "brand": "Kanlli", "sov": 15 },
+    { "brand": "Internet República", "sov": 12 },
+    { "brand": "Smartbrand", "sov": 9 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Labelium": 71, "Elogia": 71, "T2O Media": 60, "Kanlli": 64, "Internet República": 58, "Smartbrand": 55 } },
+    { "month": "2025-11", "scores": { "Labelium": 72, "Elogia": 72, "T2O Media": 62, "Kanlli": 64, "Internet República": 58, "Smartbrand": 55 } },
+    { "month": "2025-12", "scores": { "Labelium": 73, "Elogia": 72, "T2O Media": 63, "Kanlli": 63, "Internet República": 58, "Smartbrand": 54 } },
+    { "month": "2026-01", "scores": { "Labelium": 74, "Elogia": 72, "T2O Media": 65, "Kanlli": 63, "Internet República": 58, "Smartbrand": 54 } },
+    { "month": "2026-02", "scores": { "Labelium": 75, "Elogia": 73, "T2O Media": 66, "Kanlli": 62, "Internet República": 58, "Smartbrand": 53 } },
+    { "month": "2026-03", "scores": { "Labelium": 76, "Elogia": 73, "T2O Media": 67, "Kanlli": 62, "Internet República": 58, "Smartbrand": 53 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Labelium", "positive": 66, "neutral": 27, "negative": 7 },
+    { "brand": "Elogia", "positive": 63, "neutral": 28, "negative": 9 },
+    { "brand": "T2O Media", "positive": 60, "neutral": 30, "negative": 10 },
+    { "brand": "Kanlli", "positive": 52, "neutral": 35, "negative": 13 },
+    { "brand": "Internet República", "positive": 50, "neutral": 38, "negative": 12 },
+    { "brand": "Smartbrand", "positive": 47, "neutral": 40, "negative": 13 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Labelium": 25, "Elogia": 23, "T2O Media": 17, "Kanlli": 15, "Internet República": 12, "Smartbrand": 8 } },
+    { "model": "gemini", "distribution": { "Labelium": 23, "Elogia": 22, "T2O Media": 18, "Kanlli": 16, "Internet República": 12, "Smartbrand": 9 } },
+    { "model": "perplexity", "distribution": { "Labelium": 24, "Elogia": 22, "T2O Media": 19, "Kanlli": 14, "Internet República": 12, "Smartbrand": 9 } },
+    { "model": "claude", "distribution": { "Labelium": 23, "Elogia": 23, "T2O Media": 18, "Kanlli": 15, "Internet República": 12, "Smartbrand": 9 } },
+    { "model": "grok", "distribution": { "Labelium": 25, "Elogia": 21, "T2O Media": 17, "Kanlli": 16, "Internet República": 12, "Smartbrand": 9 } },
+    { "model": "deepseek", "distribution": { "Labelium": 24, "Elogia": 22, "T2O Media": 18, "Kanlli": 15, "Internet República": 12, "Smartbrand": 9 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Labelium", "sources": ["labelium.com", "MarketingDirecto.com", "Google Partner Directory"] },
+    { "brand": "Elogia", "sources": ["elogia.net", "MarketingDirecto.com"] },
+    { "brand": "T2O Media", "sources": ["t2omedia.com", "PuroMarketing.com"] },
+    { "brand": "Kanlli", "sources": ["kanlli.com", "MarketingDirecto.com"] },
+    { "brand": "Internet República", "sources": ["internetrepublica.com", "PuroMarketing.com"] },
+    { "brand": "Smartbrand", "sources": ["smartbrand.net", "LinkedIn"] }
+  ]
+}

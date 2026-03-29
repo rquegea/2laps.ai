@@ -1,0 +1,110 @@
+{
+  "id": "zapatillas-running-espana",
+  "name": "Zapatillas Running",
+  "country": "ES",
+  "sector": "Deporte",
+  "lastUpdated": "2026-03-24",
+  "promptsTracked": 17,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores zapatillas de running en España?",
+    "Mejores zapatillas para correr maratón relación calidad-precio",
+    "¿Qué zapatillas de running recomiendan los expertos en 2026?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Nike",
+      "logo": "/brands/nike.png",
+      "consensusScore": 86,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": -1
+    },
+    {
+      "position": 2,
+      "brand": "Asics",
+      "logo": "/brands/asics.png",
+      "consensusScore": 84,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 6
+    },
+    {
+      "position": 3,
+      "brand": "Hoka",
+      "logo": "/brands/hoka.png",
+      "consensusScore": 80,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 14
+    },
+    {
+      "position": 4,
+      "brand": "New Balance",
+      "logo": "/brands/newbalance.png",
+      "consensusScore": 76,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 5,
+      "brand": "Adidas",
+      "logo": "/brands/adidas.png",
+      "consensusScore": 69,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -5
+    },
+    {
+      "position": 6,
+      "brand": "Brooks",
+      "logo": "/brands/brooks.png",
+      "consensusScore": 64,
+      "mentionedByModels": 4,
+      "trend": "up",
+      "trendDelta": 3
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Nike", "sov": 23 },
+    { "brand": "Asics", "sov": 21 },
+    { "brand": "Hoka", "sov": 20 },
+    { "brand": "New Balance", "sov": 16 },
+    { "brand": "Adidas", "sov": 12 },
+    { "brand": "Brooks", "sov": 8 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Nike": 87, "Asics": 79, "Hoka": 68, "New Balance": 72, "Adidas": 73, "Brooks": 61 } },
+    { "month": "2025-11", "scores": { "Nike": 87, "Asics": 80, "Hoka": 71, "New Balance": 73, "Adidas": 72, "Brooks": 62 } },
+    { "month": "2025-12", "scores": { "Nike": 86, "Asics": 81, "Hoka": 74, "New Balance": 74, "Adidas": 71, "Brooks": 62 } },
+    { "month": "2026-01", "scores": { "Nike": 86, "Asics": 82, "Hoka": 76, "New Balance": 75, "Adidas": 70, "Brooks": 63 } },
+    { "month": "2026-02", "scores": { "Nike": 86, "Asics": 83, "Hoka": 78, "New Balance": 76, "Adidas": 70, "Brooks": 64 } },
+    { "month": "2026-03", "scores": { "Nike": 86, "Asics": 84, "Hoka": 80, "New Balance": 76, "Adidas": 69, "Brooks": 64 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Nike", "positive": 70, "neutral": 22, "negative": 8 },
+    { "brand": "Asics", "positive": 78, "neutral": 18, "negative": 4 },
+    { "brand": "Hoka", "positive": 80, "neutral": 15, "negative": 5 },
+    { "brand": "New Balance", "positive": 72, "neutral": 22, "negative": 6 },
+    { "brand": "Adidas", "positive": 55, "neutral": 30, "negative": 15 },
+    { "brand": "Brooks", "positive": 68, "neutral": 25, "negative": 7 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Nike": 25, "Asics": 22, "Hoka": 19, "New Balance": 15, "Adidas": 12, "Brooks": 7 } },
+    { "model": "gemini", "distribution": { "Nike": 23, "Asics": 20, "Hoka": 20, "New Balance": 17, "Adidas": 12, "Brooks": 8 } },
+    { "model": "perplexity", "distribution": { "Nike": 21, "Asics": 21, "Hoka": 22, "New Balance": 16, "Adidas": 11, "Brooks": 9 } },
+    { "model": "claude", "distribution": { "Nike": 22, "Asics": 22, "Hoka": 19, "New Balance": 17, "Adidas": 12, "Brooks": 8 } },
+    { "model": "grok", "distribution": { "Nike": 24, "Asics": 20, "Hoka": 19, "New Balance": 16, "Adidas": 13, "Brooks": 8 } },
+    { "model": "deepseek", "distribution": { "Nike": 24, "Asics": 21, "Hoka": 18, "New Balance": 16, "Adidas": 13, "Brooks": 8 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Nike", "sources": ["Runner's World España", "nike.com", "Runnea.com"] },
+    { "brand": "Asics", "sources": ["Runner's World España", "asics.com", "Runnea.com"] },
+    { "brand": "Hoka", "sources": ["Runnea.com", "Runner's World España", "hoka.com"] },
+    { "brand": "New Balance", "sources": ["Runnea.com", "newbalance.es"] },
+    { "brand": "Adidas", "sources": ["adidas.es", "Runner's World España"] },
+    { "brand": "Brooks", "sources": ["brooksrunning.com", "Runnea.com"] }
+  ]
+}

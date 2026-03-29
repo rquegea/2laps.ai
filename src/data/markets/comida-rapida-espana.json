@@ -1,0 +1,110 @@
+{
+  "id": "comida-rapida-espana",
+  "name": "Comida Rápida",
+  "country": "ES",
+  "sector": "Restauracion",
+  "lastUpdated": "2026-03-25",
+  "promptsTracked": 16,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores cadenas de comida rápida en España?",
+    "Mejores hamburguesas de cadenas de fast food en España",
+    "¿Qué restaurante de comida rápida tiene mejor calidad-precio en España?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "McDonald's",
+      "logo": "/brands/mcdonalds.png",
+      "consensusScore": 79,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": -1
+    },
+    {
+      "position": 2,
+      "brand": "Burger King",
+      "logo": "/brands/burgerking.png",
+      "consensusScore": 75,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 3,
+      "brand": "Goiko",
+      "logo": "/brands/goiko.png",
+      "consensusScore": 72,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 11
+    },
+    {
+      "position": 4,
+      "brand": "Telepizza",
+      "logo": "/brands/telepizza.png",
+      "consensusScore": 61,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -6
+    },
+    {
+      "position": 5,
+      "brand": "KFC",
+      "logo": "/brands/kfc.png",
+      "consensusScore": 65,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 3
+    },
+    {
+      "position": 6,
+      "brand": "Domino's",
+      "logo": "/brands/dominos.png",
+      "consensusScore": 58,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -2
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "McDonald's", "sov": 24 },
+    { "brand": "Burger King", "sov": 21 },
+    { "brand": "Goiko", "sov": 19 },
+    { "brand": "KFC", "sov": 15 },
+    { "brand": "Telepizza", "sov": 12 },
+    { "brand": "Domino's", "sov": 9 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "McDonald's": 80, "Burger King": 75, "Goiko": 63, "Telepizza": 66, "KFC": 62, "Domino's": 60 } },
+    { "month": "2025-11", "scores": { "McDonald's": 80, "Burger King": 75, "Goiko": 65, "Telepizza": 65, "KFC": 63, "Domino's": 60 } },
+    { "month": "2025-12", "scores": { "McDonald's": 79, "Burger King": 75, "Goiko": 67, "Telepizza": 64, "KFC": 63, "Domino's": 59 } },
+    { "month": "2026-01", "scores": { "McDonald's": 79, "Burger King": 75, "Goiko": 69, "Telepizza": 63, "KFC": 64, "Domino's": 59 } },
+    { "month": "2026-02", "scores": { "McDonald's": 79, "Burger King": 75, "Goiko": 71, "Telepizza": 62, "KFC": 65, "Domino's": 58 } },
+    { "month": "2026-03", "scores": { "McDonald's": 79, "Burger King": 75, "Goiko": 72, "Telepizza": 61, "KFC": 65, "Domino's": 58 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "McDonald's", "positive": 55, "neutral": 30, "negative": 15 },
+    { "brand": "Burger King", "positive": 53, "neutral": 32, "negative": 15 },
+    { "brand": "Goiko", "positive": 74, "neutral": 18, "negative": 8 },
+    { "brand": "Telepizza", "positive": 38, "neutral": 35, "negative": 27 },
+    { "brand": "KFC", "positive": 50, "neutral": 30, "negative": 20 },
+    { "brand": "Domino's", "positive": 42, "neutral": 36, "negative": 22 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "McDonald's": 25, "Burger King": 22, "Goiko": 18, "KFC": 15, "Telepizza": 12, "Domino's": 8 } },
+    { "model": "gemini", "distribution": { "McDonald's": 24, "Burger King": 21, "Goiko": 17, "KFC": 16, "Telepizza": 13, "Domino's": 9 } },
+    { "model": "perplexity", "distribution": { "McDonald's": 22, "Burger King": 20, "Goiko": 22, "KFC": 14, "Telepizza": 12, "Domino's": 10 } },
+    { "model": "claude", "distribution": { "McDonald's": 23, "Burger King": 20, "Goiko": 21, "KFC": 15, "Telepizza": 12, "Domino's": 9 } },
+    { "model": "grok", "distribution": { "McDonald's": 26, "Burger King": 22, "Goiko": 16, "KFC": 15, "Telepizza": 12, "Domino's": 9 } },
+    { "model": "deepseek", "distribution": { "McDonald's": 25, "Burger King": 21, "Goiko": 17, "KFC": 16, "Telepizza": 11, "Domino's": 10 } }
+  ],
+  "sourcesCited": [
+    { "brand": "McDonald's", "sources": ["Wikipedia.es", "ElEconomista.es", "mcdonalds.es"] },
+    { "brand": "Burger King", "sources": ["Wikipedia.es", "burgerking.es"] },
+    { "brand": "Goiko", "sources": ["TripAdvisor", "ElComidista (El País)", "goiko.com"] },
+    { "brand": "Telepizza", "sources": ["Wikipedia.es", "telepizza.es"] },
+    { "brand": "KFC", "sources": ["Wikipedia.es", "kfc.es"] },
+    { "brand": "Domino's", "sources": ["dominospizza.es", "TripAdvisor"] }
+  ]
+}

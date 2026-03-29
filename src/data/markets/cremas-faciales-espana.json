@@ -1,0 +1,110 @@
+{
+  "id": "cremas-faciales-espana",
+  "name": "Cremas Faciales",
+  "country": "ES",
+  "sector": "Belleza",
+  "lastUpdated": "2026-03-22",
+  "promptsTracked": 20,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores cremas faciales en España?",
+    "Mejores cremas hidratantes para la cara relación calidad-precio",
+    "¿Qué crema facial recomiendan los dermatólogos en España?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "CeraVe",
+      "logo": "/brands/cerave.png",
+      "consensusScore": 91,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 8
+    },
+    {
+      "position": 2,
+      "brand": "La Roche-Posay",
+      "logo": "/brands/larocheposay.png",
+      "consensusScore": 89,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 3
+    },
+    {
+      "position": 3,
+      "brand": "Nivea",
+      "logo": "/brands/nivea.png",
+      "consensusScore": 72,
+      "mentionedByModels": 6,
+      "trend": "down",
+      "trendDelta": -5
+    },
+    {
+      "position": 4,
+      "brand": "Neutrogena",
+      "logo": "/brands/neutrogena.png",
+      "consensusScore": 68,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 5,
+      "brand": "Eucerin",
+      "logo": "/brands/eucerin.png",
+      "consensusScore": 66,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 6,
+      "brand": "Olay",
+      "logo": "/brands/olay.png",
+      "consensusScore": 54,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -7
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "CeraVe", "sov": 27 },
+    { "brand": "La Roche-Posay", "sov": 25 },
+    { "brand": "Nivea", "sov": 17 },
+    { "brand": "Neutrogena", "sov": 13 },
+    { "brand": "Eucerin", "sov": 11 },
+    { "brand": "Olay", "sov": 7 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "CeraVe": 84, "La Roche-Posay": 86, "Nivea": 76, "Neutrogena": 67, "Eucerin": 62, "Olay": 60 } },
+    { "month": "2025-11", "scores": { "CeraVe": 86, "La Roche-Posay": 87, "Nivea": 75, "Neutrogena": 67, "Eucerin": 63, "Olay": 58 } },
+    { "month": "2025-12", "scores": { "CeraVe": 88, "La Roche-Posay": 87, "Nivea": 74, "Neutrogena": 67, "Eucerin": 64, "Olay": 57 } },
+    { "month": "2026-01", "scores": { "CeraVe": 89, "La Roche-Posay": 88, "Nivea": 73, "Neutrogena": 68, "Eucerin": 65, "Olay": 56 } },
+    { "month": "2026-02", "scores": { "CeraVe": 90, "La Roche-Posay": 88, "Nivea": 72, "Neutrogena": 68, "Eucerin": 66, "Olay": 55 } },
+    { "month": "2026-03", "scores": { "CeraVe": 91, "La Roche-Posay": 89, "Nivea": 72, "Neutrogena": 68, "Eucerin": 66, "Olay": 54 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "CeraVe", "positive": 85, "neutral": 12, "negative": 3 },
+    { "brand": "La Roche-Posay", "positive": 82, "neutral": 14, "negative": 4 },
+    { "brand": "Nivea", "positive": 55, "neutral": 33, "negative": 12 },
+    { "brand": "Neutrogena", "positive": 58, "neutral": 30, "negative": 12 },
+    { "brand": "Eucerin", "positive": 65, "neutral": 27, "negative": 8 },
+    { "brand": "Olay", "positive": 40, "neutral": 38, "negative": 22 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "CeraVe": 28, "La Roche-Posay": 26, "Nivea": 16, "Neutrogena": 13, "Eucerin": 11, "Olay": 6 } },
+    { "model": "gemini", "distribution": { "CeraVe": 26, "La Roche-Posay": 25, "Nivea": 18, "Neutrogena": 13, "Eucerin": 11, "Olay": 7 } },
+    { "model": "perplexity", "distribution": { "CeraVe": 29, "La Roche-Posay": 26, "Nivea": 15, "Neutrogena": 12, "Eucerin": 12, "Olay": 6 } },
+    { "model": "claude", "distribution": { "CeraVe": 27, "La Roche-Posay": 27, "Nivea": 16, "Neutrogena": 13, "Eucerin": 10, "Olay": 7 } },
+    { "model": "grok", "distribution": { "CeraVe": 25, "La Roche-Posay": 24, "Nivea": 19, "Neutrogena": 14, "Eucerin": 11, "Olay": 7 } },
+    { "model": "deepseek", "distribution": { "CeraVe": 27, "La Roche-Posay": 24, "Nivea": 17, "Neutrogena": 13, "Eucerin": 12, "Olay": 7 } }
+  ],
+  "sourcesCited": [
+    { "brand": "CeraVe", "sources": ["Dermstore.com", "OCU.org", "cerave.es"] },
+    { "brand": "La Roche-Posay", "sources": ["OCU.org", "laroche-posay.es", "Dermatología Clínica"] },
+    { "brand": "Nivea", "sources": ["OCU.org", "nivea.es"] },
+    { "brand": "Neutrogena", "sources": ["Amazon.es reviews", "neutrogena.es"] },
+    { "brand": "Eucerin", "sources": ["eucerin.es", "Farmacia Online"] },
+    { "brand": "Olay", "sources": ["olay.es", "Amazon.es reviews"] }
+  ]
+}

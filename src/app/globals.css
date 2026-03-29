@@ -8,12 +8,17 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-[#1a1a1a];
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(194, 59, 76, 0.3);
+    color: #F2F2F2;
   }
 }
 
@@ -36,5 +41,29 @@
   .animate-fadeIn {
     animation: fadeIn 0.6s ease-out forwards;
     opacity: 0;
+  }
+
+  /* Bloomberg-style scrollbar */
+  .scrollbar-terminal::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-terminal::-webkit-scrollbar-track {
+    background: #0A0A0B;
+  }
+  .scrollbar-terminal::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+  }
+  .scrollbar-terminal::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Glow effect for cards */
+  .glow-red {
+    box-shadow: 0 0 20px rgba(194, 59, 76, 0.15);
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
   }
 }

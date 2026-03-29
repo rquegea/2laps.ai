@@ -1,0 +1,110 @@
+{
+  "id": "plataformas-ecommerce",
+  "name": "Plataformas E-commerce",
+  "country": "ES",
+  "sector": "Tecnologia",
+  "lastUpdated": "2026-03-26",
+  "promptsTracked": 19,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuál es la mejor plataforma de e-commerce para crear una tienda online en España?",
+    "Comparativa de plataformas para montar un e-commerce en 2026",
+    "¿Qué plataforma de comercio electrónico es mejor para pymes españolas?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Shopify",
+      "logo": "/brands/shopify.png",
+      "consensusScore": 89,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 2,
+      "brand": "WooCommerce",
+      "logo": "/brands/woocommerce.png",
+      "consensusScore": 82,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": -1
+    },
+    {
+      "position": 3,
+      "brand": "PrestaShop",
+      "logo": "/brands/prestashop.png",
+      "consensusScore": 71,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -4
+    },
+    {
+      "position": 4,
+      "brand": "Magento",
+      "logo": "/brands/magento.png",
+      "consensusScore": 63,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -6
+    },
+    {
+      "position": 5,
+      "brand": "BigCommerce",
+      "logo": "/brands/bigcommerce.png",
+      "consensusScore": 56,
+      "mentionedByModels": 3,
+      "trend": "stable",
+      "trendDelta": 2
+    },
+    {
+      "position": 6,
+      "brand": "Wix",
+      "logo": "/brands/wix.png",
+      "consensusScore": 52,
+      "mentionedByModels": 4,
+      "trend": "up",
+      "trendDelta": 5
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Shopify", "sov": 30 },
+    { "brand": "WooCommerce", "sov": 25 },
+    { "brand": "PrestaShop", "sov": 17 },
+    { "brand": "Magento", "sov": 13 },
+    { "brand": "Wix", "sov": 9 },
+    { "brand": "BigCommerce", "sov": 6 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Shopify": 85, "WooCommerce": 83, "PrestaShop": 74, "Magento": 68, "BigCommerce": 54, "Wix": 48 } },
+    { "month": "2025-11", "scores": { "Shopify": 86, "WooCommerce": 83, "PrestaShop": 73, "Magento": 67, "BigCommerce": 54, "Wix": 49 } },
+    { "month": "2025-12", "scores": { "Shopify": 87, "WooCommerce": 82, "PrestaShop": 73, "Magento": 66, "BigCommerce": 55, "Wix": 50 } },
+    { "month": "2026-01", "scores": { "Shopify": 88, "WooCommerce": 82, "PrestaShop": 72, "Magento": 64, "BigCommerce": 55, "Wix": 51 } },
+    { "month": "2026-02", "scores": { "Shopify": 88, "WooCommerce": 82, "PrestaShop": 71, "Magento": 63, "BigCommerce": 56, "Wix": 51 } },
+    { "month": "2026-03", "scores": { "Shopify": 89, "WooCommerce": 82, "PrestaShop": 71, "Magento": 63, "BigCommerce": 56, "Wix": 52 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Shopify", "positive": 80, "neutral": 15, "negative": 5 },
+    { "brand": "WooCommerce", "positive": 65, "neutral": 25, "negative": 10 },
+    { "brand": "PrestaShop", "positive": 55, "neutral": 30, "negative": 15 },
+    { "brand": "Magento", "positive": 48, "neutral": 30, "negative": 22 },
+    { "brand": "BigCommerce", "positive": 52, "neutral": 38, "negative": 10 },
+    { "brand": "Wix", "positive": 50, "neutral": 32, "negative": 18 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Shopify": 32, "WooCommerce": 25, "PrestaShop": 16, "Magento": 12, "Wix": 9, "BigCommerce": 6 } },
+    { "model": "gemini", "distribution": { "Shopify": 29, "WooCommerce": 26, "PrestaShop": 17, "Magento": 13, "Wix": 9, "BigCommerce": 6 } },
+    { "model": "perplexity", "distribution": { "Shopify": 31, "WooCommerce": 24, "PrestaShop": 17, "Magento": 13, "Wix": 8, "BigCommerce": 7 } },
+    { "model": "claude", "distribution": { "Shopify": 28, "WooCommerce": 27, "PrestaShop": 18, "Magento": 13, "Wix": 8, "BigCommerce": 6 } },
+    { "model": "grok", "distribution": { "Shopify": 30, "WooCommerce": 24, "PrestaShop": 17, "Magento": 14, "Wix": 9, "BigCommerce": 6 } },
+    { "model": "deepseek", "distribution": { "Shopify": 31, "WooCommerce": 25, "PrestaShop": 16, "Magento": 13, "Wix": 9, "BigCommerce": 6 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Shopify", "sources": ["shopify.com", "G2.com", "TrustPilot"] },
+    { "brand": "WooCommerce", "sources": ["wordpress.org", "G2.com", "WPBeginner"] },
+    { "brand": "PrestaShop", "sources": ["prestashop.com", "G2.com"] },
+    { "brand": "Magento", "sources": ["business.adobe.com", "G2.com"] },
+    { "brand": "BigCommerce", "sources": ["bigcommerce.com", "G2.com"] },
+    { "brand": "Wix", "sources": ["wix.com", "TrustPilot", "PCMag"] }
+  ]
+}

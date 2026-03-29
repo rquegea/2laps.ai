@@ -1,0 +1,110 @@
+{
+  "id": "seguros-coche-espana",
+  "name": "Seguros de Coche",
+  "country": "ES",
+  "sector": "Seguros",
+  "lastUpdated": "2026-03-26",
+  "promptsTracked": 18,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuál es el mejor seguro de coche en España?",
+    "Comparativa de seguros de coche baratos en España 2026",
+    "¿Qué compañía de seguros de automóvil tiene mejor relación calidad-precio?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Mapfre",
+      "logo": "/brands/mapfre.png",
+      "consensusScore": 83,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 2,
+      "brand": "Mutua Madrileña",
+      "logo": "/brands/mutua.png",
+      "consensusScore": 80,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 6
+    },
+    {
+      "position": 3,
+      "brand": "Línea Directa",
+      "logo": "/brands/lineadirecta.png",
+      "consensusScore": 74,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 4,
+      "brand": "AXA",
+      "logo": "/brands/axa.png",
+      "consensusScore": 67,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -2
+    },
+    {
+      "position": 5,
+      "brand": "Allianz",
+      "logo": "/brands/allianz.png",
+      "consensusScore": 62,
+      "mentionedByModels": 4,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 6,
+      "brand": "Pelayo",
+      "logo": "/brands/pelayo.png",
+      "consensusScore": 55,
+      "mentionedByModels": 3,
+      "trend": "down",
+      "trendDelta": -4
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Mapfre", "sov": 26 },
+    { "brand": "Mutua Madrileña", "sov": 23 },
+    { "brand": "Línea Directa", "sov": 19 },
+    { "brand": "AXA", "sov": 15 },
+    { "brand": "Allianz", "sov": 10 },
+    { "brand": "Pelayo", "sov": 7 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Mapfre": 82, "Mutua Madrileña": 75, "Línea Directa": 71, "AXA": 68, "Allianz": 62, "Pelayo": 58 } },
+    { "month": "2025-11", "scores": { "Mapfre": 82, "Mutua Madrileña": 76, "Línea Directa": 72, "AXA": 68, "Allianz": 62, "Pelayo": 57 } },
+    { "month": "2025-12", "scores": { "Mapfre": 83, "Mutua Madrileña": 77, "Línea Directa": 72, "AXA": 68, "Allianz": 61, "Pelayo": 57 } },
+    { "month": "2026-01", "scores": { "Mapfre": 83, "Mutua Madrileña": 78, "Línea Directa": 73, "AXA": 67, "Allianz": 62, "Pelayo": 56 } },
+    { "month": "2026-02", "scores": { "Mapfre": 83, "Mutua Madrileña": 79, "Línea Directa": 74, "AXA": 67, "Allianz": 62, "Pelayo": 55 } },
+    { "month": "2026-03", "scores": { "Mapfre": 83, "Mutua Madrileña": 80, "Línea Directa": 74, "AXA": 67, "Allianz": 62, "Pelayo": 55 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Mapfre", "positive": 62, "neutral": 28, "negative": 10 },
+    { "brand": "Mutua Madrileña", "positive": 70, "neutral": 22, "negative": 8 },
+    { "brand": "Línea Directa", "positive": 60, "neutral": 27, "negative": 13 },
+    { "brand": "AXA", "positive": 50, "neutral": 35, "negative": 15 },
+    { "brand": "Allianz", "positive": 48, "neutral": 37, "negative": 15 },
+    { "brand": "Pelayo", "positive": 42, "neutral": 38, "negative": 20 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Mapfre": 28, "Mutua Madrileña": 24, "Línea Directa": 18, "AXA": 14, "Allianz": 10, "Pelayo": 6 } },
+    { "model": "gemini", "distribution": { "Mapfre": 25, "Mutua Madrileña": 22, "Línea Directa": 20, "AXA": 16, "Allianz": 10, "Pelayo": 7 } },
+    { "model": "perplexity", "distribution": { "Mapfre": 27, "Mutua Madrileña": 23, "Línea Directa": 19, "AXA": 15, "Allianz": 9, "Pelayo": 7 } },
+    { "model": "claude", "distribution": { "Mapfre": 24, "Mutua Madrileña": 24, "Línea Directa": 20, "AXA": 15, "Allianz": 11, "Pelayo": 6 } },
+    { "model": "grok", "distribution": { "Mapfre": 26, "Mutua Madrileña": 22, "Línea Directa": 18, "AXA": 16, "Allianz": 10, "Pelayo": 8 } },
+    { "model": "deepseek", "distribution": { "Mapfre": 27, "Mutua Madrileña": 21, "Línea Directa": 19, "AXA": 15, "Allianz": 11, "Pelayo": 7 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Mapfre", "sources": ["OCU.org", "Kelisto.es", "mapfre.es"] },
+    { "brand": "Mutua Madrileña", "sources": ["OCU.org", "Kelisto.es", "mutua.es"] },
+    { "brand": "Línea Directa", "sources": ["Rastreator.com", "lineadirecta.com"] },
+    { "brand": "AXA", "sources": ["Kelisto.es", "axa.es"] },
+    { "brand": "Allianz", "sources": ["Rastreator.com", "allianz.es"] },
+    { "brand": "Pelayo", "sources": ["Rastreator.com", "pelayo.com"] }
+  ]
+}

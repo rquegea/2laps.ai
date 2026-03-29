@@ -1,0 +1,110 @@
+{
+  "id": "mejores-hoteles-barcelona",
+  "name": "Hoteles Barcelona",
+  "country": "ES",
+  "sector": "Turismo",
+  "lastUpdated": "2026-03-23",
+  "promptsTracked": 14,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son los mejores hoteles de lujo en Barcelona?",
+    "Hoteles con mejores vistas en Barcelona",
+    "¿Qué hotel de 5 estrellas recomiendas en Barcelona para una escapada romántica?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Hotel Arts",
+      "logo": "/brands/hotelarts.png",
+      "consensusScore": 90,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 2
+    },
+    {
+      "position": 2,
+      "brand": "W Barcelona",
+      "logo": "/brands/wbarcelona.png",
+      "consensusScore": 86,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 4
+    },
+    {
+      "position": 3,
+      "brand": "Mandarin Oriental",
+      "logo": "/brands/mandarin.png",
+      "consensusScore": 84,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 6
+    },
+    {
+      "position": 4,
+      "brand": "Majestic Hotel & Spa",
+      "logo": "/brands/majestic.png",
+      "consensusScore": 78,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 5,
+      "brand": "Cotton House Hotel",
+      "logo": "/brands/cottonhouse.png",
+      "consensusScore": 72,
+      "mentionedByModels": 4,
+      "trend": "up",
+      "trendDelta": 9
+    },
+    {
+      "position": 6,
+      "brand": "El Palace Barcelona",
+      "logo": "/brands/elpalace.png",
+      "consensusScore": 69,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -2
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Hotel Arts", "sov": 25 },
+    { "brand": "W Barcelona", "sov": 22 },
+    { "brand": "Mandarin Oriental", "sov": 19 },
+    { "brand": "Majestic Hotel & Spa", "sov": 15 },
+    { "brand": "Cotton House Hotel", "sov": 10 },
+    { "brand": "El Palace Barcelona", "sov": 9 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Hotel Arts": 88, "W Barcelona": 83, "Mandarin Oriental": 79, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 64, "El Palace Barcelona": 71 } },
+    { "month": "2025-11", "scores": { "Hotel Arts": 88, "W Barcelona": 84, "Mandarin Oriental": 80, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 66, "El Palace Barcelona": 70 } },
+    { "month": "2025-12", "scores": { "Hotel Arts": 89, "W Barcelona": 84, "Mandarin Oriental": 81, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 68, "El Palace Barcelona": 70 } },
+    { "month": "2026-01", "scores": { "Hotel Arts": 89, "W Barcelona": 85, "Mandarin Oriental": 82, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 70, "El Palace Barcelona": 69 } },
+    { "month": "2026-02", "scores": { "Hotel Arts": 90, "W Barcelona": 85, "Mandarin Oriental": 83, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 71, "El Palace Barcelona": 69 } },
+    { "month": "2026-03", "scores": { "Hotel Arts": 90, "W Barcelona": 86, "Mandarin Oriental": 84, "Majestic Hotel & Spa": 78, "Cotton House Hotel": 72, "El Palace Barcelona": 69 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Hotel Arts", "positive": 82, "neutral": 14, "negative": 4 },
+    { "brand": "W Barcelona", "positive": 75, "neutral": 18, "negative": 7 },
+    { "brand": "Mandarin Oriental", "positive": 80, "neutral": 15, "negative": 5 },
+    { "brand": "Majestic Hotel & Spa", "positive": 71, "neutral": 22, "negative": 7 },
+    { "brand": "Cotton House Hotel", "positive": 68, "neutral": 25, "negative": 7 },
+    { "brand": "El Palace Barcelona", "positive": 60, "neutral": 30, "negative": 10 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Hotel Arts": 26, "W Barcelona": 23, "Mandarin Oriental": 20, "Majestic Hotel & Spa": 14, "Cotton House Hotel": 9, "El Palace Barcelona": 8 } },
+    { "model": "gemini", "distribution": { "Hotel Arts": 24, "W Barcelona": 22, "Mandarin Oriental": 18, "Majestic Hotel & Spa": 16, "Cotton House Hotel": 11, "El Palace Barcelona": 9 } },
+    { "model": "perplexity", "distribution": { "Hotel Arts": 27, "W Barcelona": 21, "Mandarin Oriental": 19, "Majestic Hotel & Spa": 15, "Cotton House Hotel": 10, "El Palace Barcelona": 8 } },
+    { "model": "claude", "distribution": { "Hotel Arts": 23, "W Barcelona": 22, "Mandarin Oriental": 21, "Majestic Hotel & Spa": 15, "Cotton House Hotel": 10, "El Palace Barcelona": 9 } },
+    { "model": "grok", "distribution": { "Hotel Arts": 25, "W Barcelona": 23, "Mandarin Oriental": 18, "Majestic Hotel & Spa": 14, "Cotton House Hotel": 11, "El Palace Barcelona": 9 } },
+    { "model": "deepseek", "distribution": { "Hotel Arts": 24, "W Barcelona": 21, "Mandarin Oriental": 20, "Majestic Hotel & Spa": 16, "Cotton House Hotel": 10, "El Palace Barcelona": 9 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Hotel Arts", "sources": ["TripAdvisor", "Booking.com", "ritzcarlton.com"] },
+    { "brand": "W Barcelona", "sources": ["TripAdvisor", "Booking.com", "marriott.com"] },
+    { "brand": "Mandarin Oriental", "sources": ["TripAdvisor", "mandarinoriental.com"] },
+    { "brand": "Majestic Hotel & Spa", "sources": ["TripAdvisor", "Booking.com"] },
+    { "brand": "Cotton House Hotel", "sources": ["TripAdvisor", "Condé Nast Traveler"] },
+    { "brand": "El Palace Barcelona", "sources": ["Booking.com", "TripAdvisor"] }
+  ]
+}

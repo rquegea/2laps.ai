@@ -1,0 +1,110 @@
+{
+  "id": "galletas-espana",
+  "name": "Galletas",
+  "country": "ES",
+  "sector": "FMCG",
+  "lastUpdated": "2026-03-25",
+  "promptsTracked": 12,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores galletas en España?",
+    "Mejores marcas de galletas para niños en España",
+    "¿Qué galletas saludables recomiendas en el mercado español?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Gullón",
+      "logo": "/brands/gullon.png",
+      "consensusScore": 87,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 12
+    },
+    {
+      "position": 2,
+      "brand": "Fontaneda",
+      "logo": "/brands/fontaneda.png",
+      "consensusScore": 71,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 3,
+      "brand": "Lotus",
+      "logo": "/brands/lotus.png",
+      "consensusScore": 64,
+      "mentionedByModels": 4,
+      "trend": "up",
+      "trendDelta": 8
+    },
+    {
+      "position": 4,
+      "brand": "Oreo",
+      "logo": "/brands/oreo.png",
+      "consensusScore": 58,
+      "mentionedByModels": 5,
+      "trend": "down",
+      "trendDelta": -3
+    },
+    {
+      "position": 5,
+      "brand": "Marbú",
+      "logo": "/brands/marbu.png",
+      "consensusScore": 52,
+      "mentionedByModels": 3,
+      "trend": "down",
+      "trendDelta": -5
+    },
+    {
+      "position": 6,
+      "brand": "Cuétara",
+      "logo": "/brands/cuetara.png",
+      "consensusScore": 49,
+      "mentionedByModels": 4,
+      "trend": "stable",
+      "trendDelta": 1
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Gullón", "sov": 31 },
+    { "brand": "Fontaneda", "sov": 22 },
+    { "brand": "Lotus", "sov": 17 },
+    { "brand": "Oreo", "sov": 14 },
+    { "brand": "Marbú", "sov": 9 },
+    { "brand": "Cuétara", "sov": 7 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Gullón": 78, "Fontaneda": 72, "Lotus": 58, "Oreo": 60, "Marbú": 55, "Cuétara": 48 } },
+    { "month": "2025-11", "scores": { "Gullón": 80, "Fontaneda": 71, "Lotus": 59, "Oreo": 61, "Marbú": 54, "Cuétara": 47 } },
+    { "month": "2025-12", "scores": { "Gullón": 82, "Fontaneda": 70, "Lotus": 60, "Oreo": 60, "Marbú": 56, "Cuétara": 48 } },
+    { "month": "2026-01", "scores": { "Gullón": 84, "Fontaneda": 71, "Lotus": 62, "Oreo": 59, "Marbú": 54, "Cuétara": 49 } },
+    { "month": "2026-02", "scores": { "Gullón": 85, "Fontaneda": 71, "Lotus": 63, "Oreo": 58, "Marbú": 53, "Cuétara": 49 } },
+    { "month": "2026-03", "scores": { "Gullón": 87, "Fontaneda": 71, "Lotus": 64, "Oreo": 58, "Marbú": 52, "Cuétara": 49 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Gullón", "positive": 72, "neutral": 22, "negative": 6 },
+    { "brand": "Fontaneda", "positive": 58, "neutral": 31, "negative": 11 },
+    { "brand": "Lotus", "positive": 65, "neutral": 25, "negative": 10 },
+    { "brand": "Oreo", "positive": 52, "neutral": 30, "negative": 18 },
+    { "brand": "Marbú", "positive": 44, "neutral": 38, "negative": 18 },
+    { "brand": "Cuétara", "positive": 40, "neutral": 42, "negative": 18 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Gullón": 35, "Fontaneda": 24, "Lotus": 15, "Oreo": 12, "Marbú": 8, "Cuétara": 6 } },
+    { "model": "gemini", "distribution": { "Gullón": 30, "Fontaneda": 22, "Lotus": 18, "Oreo": 15, "Marbú": 9, "Cuétara": 6 } },
+    { "model": "perplexity", "distribution": { "Gullón": 33, "Fontaneda": 20, "Lotus": 19, "Oreo": 13, "Marbú": 8, "Cuétara": 7 } },
+    { "model": "claude", "distribution": { "Gullón": 28, "Fontaneda": 23, "Lotus": 17, "Oreo": 16, "Marbú": 10, "Cuétara": 6 } },
+    { "model": "grok", "distribution": { "Gullón": 32, "Fontaneda": 21, "Lotus": 16, "Oreo": 14, "Marbú": 10, "Cuétara": 7 } },
+    { "model": "deepseek", "distribution": { "Gullón": 29, "Fontaneda": 22, "Lotus": 18, "Oreo": 15, "Marbú": 9, "Cuétara": 7 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Gullón", "sources": ["OCU.org", "ElComidista (El País)", "Salud Sin Bulos"] },
+    { "brand": "Fontaneda", "sources": ["Wikipedia.es", "ElComidista (El País)"] },
+    { "brand": "Lotus", "sources": ["Amazon.es reviews", "Directoalpaladar.com"] },
+    { "brand": "Oreo", "sources": ["Wikipedia.es", "Amazon.es reviews"] },
+    { "brand": "Marbú", "sources": ["OCU.org", "Carrefour.es"] },
+    { "brand": "Cuétara", "sources": ["OCU.org", "Eleconomista.es"] }
+  ]
+}

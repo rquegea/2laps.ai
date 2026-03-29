@@ -1,0 +1,110 @@
+{
+  "id": "abogados-mercantil-madrid",
+  "name": "Abogados Mercantil Madrid",
+  "country": "ES",
+  "sector": "Legal",
+  "lastUpdated": "2026-03-20",
+  "promptsTracked": 10,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son los mejores despachos de abogados mercantilistas en Madrid?",
+    "Mejores bufetes de derecho mercantil y societario en España",
+    "¿Qué despacho de abogados recomiendas para operaciones de M&A en Madrid?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Garrigues",
+      "logo": "/brands/garrigues.png",
+      "consensusScore": 95,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 2,
+      "brand": "Uría Menéndez",
+      "logo": "/brands/uria.png",
+      "consensusScore": 93,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 0
+    },
+    {
+      "position": 3,
+      "brand": "Cuatrecasas",
+      "logo": "/brands/cuatrecasas.png",
+      "consensusScore": 88,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 3
+    },
+    {
+      "position": 4,
+      "brand": "Gómez-Acebo & Pombo",
+      "logo": "/brands/gap.png",
+      "consensusScore": 75,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 5,
+      "brand": "Pérez-Llorca",
+      "logo": "/brands/perezllorca.png",
+      "consensusScore": 72,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 5
+    },
+    {
+      "position": 6,
+      "brand": "Linklaters Madrid",
+      "logo": "/brands/linklaters.png",
+      "consensusScore": 68,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -2
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Garrigues", "sov": 26 },
+    { "brand": "Uría Menéndez", "sov": 24 },
+    { "brand": "Cuatrecasas", "sov": 20 },
+    { "brand": "Gómez-Acebo & Pombo", "sov": 13 },
+    { "brand": "Pérez-Llorca", "sov": 10 },
+    { "brand": "Linklaters Madrid", "sov": 7 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Garrigues": 94, "Uría Menéndez": 93, "Cuatrecasas": 86, "Gómez-Acebo & Pombo": 74, "Pérez-Llorca": 68, "Linklaters Madrid": 70 } },
+    { "month": "2025-11", "scores": { "Garrigues": 94, "Uría Menéndez": 93, "Cuatrecasas": 86, "Gómez-Acebo & Pombo": 74, "Pérez-Llorca": 69, "Linklaters Madrid": 70 } },
+    { "month": "2025-12", "scores": { "Garrigues": 95, "Uría Menéndez": 93, "Cuatrecasas": 87, "Gómez-Acebo & Pombo": 75, "Pérez-Llorca": 70, "Linklaters Madrid": 69 } },
+    { "month": "2026-01", "scores": { "Garrigues": 95, "Uría Menéndez": 93, "Cuatrecasas": 87, "Gómez-Acebo & Pombo": 75, "Pérez-Llorca": 71, "Linklaters Madrid": 69 } },
+    { "month": "2026-02", "scores": { "Garrigues": 95, "Uría Menéndez": 93, "Cuatrecasas": 88, "Gómez-Acebo & Pombo": 75, "Pérez-Llorca": 72, "Linklaters Madrid": 68 } },
+    { "month": "2026-03", "scores": { "Garrigues": 95, "Uría Menéndez": 93, "Cuatrecasas": 88, "Gómez-Acebo & Pombo": 75, "Pérez-Llorca": 72, "Linklaters Madrid": 68 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Garrigues", "positive": 82, "neutral": 15, "negative": 3 },
+    { "brand": "Uría Menéndez", "positive": 80, "neutral": 16, "negative": 4 },
+    { "brand": "Cuatrecasas", "positive": 76, "neutral": 19, "negative": 5 },
+    { "brand": "Gómez-Acebo & Pombo", "positive": 65, "neutral": 28, "negative": 7 },
+    { "brand": "Pérez-Llorca", "positive": 67, "neutral": 26, "negative": 7 },
+    { "brand": "Linklaters Madrid", "positive": 60, "neutral": 30, "negative": 10 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Garrigues": 27, "Uría Menéndez": 25, "Cuatrecasas": 20, "Gómez-Acebo & Pombo": 12, "Pérez-Llorca": 10, "Linklaters Madrid": 6 } },
+    { "model": "gemini", "distribution": { "Garrigues": 25, "Uría Menéndez": 24, "Cuatrecasas": 21, "Gómez-Acebo & Pombo": 13, "Pérez-Llorca": 10, "Linklaters Madrid": 7 } },
+    { "model": "perplexity", "distribution": { "Garrigues": 26, "Uría Menéndez": 24, "Cuatrecasas": 19, "Gómez-Acebo & Pombo": 14, "Pérez-Llorca": 10, "Linklaters Madrid": 7 } },
+    { "model": "claude", "distribution": { "Garrigues": 25, "Uría Menéndez": 25, "Cuatrecasas": 20, "Gómez-Acebo & Pombo": 13, "Pérez-Llorca": 11, "Linklaters Madrid": 6 } },
+    { "model": "grok", "distribution": { "Garrigues": 27, "Uría Menéndez": 23, "Cuatrecasas": 20, "Gómez-Acebo & Pombo": 13, "Pérez-Llorca": 10, "Linklaters Madrid": 7 } },
+    { "model": "deepseek", "distribution": { "Garrigues": 26, "Uría Menéndez": 24, "Cuatrecasas": 20, "Gómez-Acebo & Pombo": 13, "Pérez-Llorca": 10, "Linklaters Madrid": 7 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Garrigues", "sources": ["Chambers & Partners", "Legal 500", "garrigues.com"] },
+    { "brand": "Uría Menéndez", "sources": ["Chambers & Partners", "Legal 500", "uria.com"] },
+    { "brand": "Cuatrecasas", "sources": ["Chambers & Partners", "Legal 500"] },
+    { "brand": "Gómez-Acebo & Pombo", "sources": ["Legal 500", "ga-p.com"] },
+    { "brand": "Pérez-Llorca", "sources": ["Chambers & Partners", "perezllorca.com"] },
+    { "brand": "Linklaters Madrid", "sources": ["Chambers & Partners", "linklaters.com"] }
+  ]
+}

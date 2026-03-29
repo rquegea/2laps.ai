@@ -1,0 +1,110 @@
+{
+  "id": "bancos-online-espana",
+  "name": "Bancos Online",
+  "country": "ES",
+  "sector": "Finanzas",
+  "lastUpdated": "2026-03-26",
+  "promptsTracked": 22,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuál es el mejor banco online en España?",
+    "Mejores cuentas sin comisiones en España 2026",
+    "¿Qué banco digital recomiendas para uso diario en España?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "Openbank",
+      "logo": "/brands/openbank.png",
+      "consensusScore": 85,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 5
+    },
+    {
+      "position": 2,
+      "brand": "ING",
+      "logo": "/brands/ing.png",
+      "consensusScore": 82,
+      "mentionedByModels": 6,
+      "trend": "down",
+      "trendDelta": -3
+    },
+    {
+      "position": 3,
+      "brand": "N26",
+      "logo": "/brands/n26.png",
+      "consensusScore": 73,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 7
+    },
+    {
+      "position": 4,
+      "brand": "Revolut",
+      "logo": "/brands/revolut.png",
+      "consensusScore": 70,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 10
+    },
+    {
+      "position": 5,
+      "brand": "BBVA Online",
+      "logo": "/brands/bbva.png",
+      "consensusScore": 66,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 6,
+      "brand": "EVO Banco",
+      "logo": "/brands/evo.png",
+      "consensusScore": 58,
+      "mentionedByModels": 3,
+      "trend": "down",
+      "trendDelta": -4
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "Openbank", "sov": 24 },
+    { "brand": "ING", "sov": 22 },
+    { "brand": "N26", "sov": 18 },
+    { "brand": "Revolut", "sov": 16 },
+    { "brand": "BBVA Online", "sov": 13 },
+    { "brand": "EVO Banco", "sov": 7 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "Openbank": 80, "ING": 85, "N26": 67, "Revolut": 61, "BBVA Online": 65, "EVO Banco": 62 } },
+    { "month": "2025-11", "scores": { "Openbank": 81, "ING": 84, "N26": 69, "Revolut": 63, "BBVA Online": 65, "EVO Banco": 61 } },
+    { "month": "2025-12", "scores": { "Openbank": 82, "ING": 83, "N26": 70, "Revolut": 65, "BBVA Online": 66, "EVO Banco": 60 } },
+    { "month": "2026-01", "scores": { "Openbank": 83, "ING": 83, "N26": 71, "Revolut": 67, "BBVA Online": 66, "EVO Banco": 59 } },
+    { "month": "2026-02", "scores": { "Openbank": 84, "ING": 82, "N26": 72, "Revolut": 69, "BBVA Online": 66, "EVO Banco": 58 } },
+    { "month": "2026-03", "scores": { "Openbank": 85, "ING": 82, "N26": 73, "Revolut": 70, "BBVA Online": 66, "EVO Banco": 58 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "Openbank", "positive": 72, "neutral": 22, "negative": 6 },
+    { "brand": "ING", "positive": 65, "neutral": 25, "negative": 10 },
+    { "brand": "N26", "positive": 63, "neutral": 24, "negative": 13 },
+    { "brand": "Revolut", "positive": 68, "neutral": 19, "negative": 13 },
+    { "brand": "BBVA Online", "positive": 52, "neutral": 35, "negative": 13 },
+    { "brand": "EVO Banco", "positive": 45, "neutral": 38, "negative": 17 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "Openbank": 25, "ING": 23, "N26": 17, "Revolut": 16, "BBVA Online": 12, "EVO Banco": 7 } },
+    { "model": "gemini", "distribution": { "Openbank": 23, "ING": 22, "N26": 18, "Revolut": 15, "BBVA Online": 14, "EVO Banco": 8 } },
+    { "model": "perplexity", "distribution": { "Openbank": 24, "ING": 21, "N26": 19, "Revolut": 17, "BBVA Online": 12, "EVO Banco": 7 } },
+    { "model": "claude", "distribution": { "Openbank": 23, "ING": 24, "N26": 17, "Revolut": 16, "BBVA Online": 13, "EVO Banco": 7 } },
+    { "model": "grok", "distribution": { "Openbank": 25, "ING": 21, "N26": 18, "Revolut": 16, "BBVA Online": 13, "EVO Banco": 7 } },
+    { "model": "deepseek", "distribution": { "Openbank": 24, "ING": 22, "N26": 17, "Revolut": 17, "BBVA Online": 13, "EVO Banco": 7 } }
+  ],
+  "sourcesCited": [
+    { "brand": "Openbank", "sources": ["Kelisto.es", "openbank.es", "Banco de España"] },
+    { "brand": "ING", "sources": ["Kelisto.es", "ing.es", "HelpMyCash.com"] },
+    { "brand": "N26", "sources": ["n26.com", "HelpMyCash.com"] },
+    { "brand": "Revolut", "sources": ["revolut.com", "Xataka.com", "TrustPilot"] },
+    { "brand": "BBVA Online", "sources": ["bbva.es", "Kelisto.es"] },
+    { "brand": "EVO Banco", "sources": ["evobanco.com", "HelpMyCash.com"] }
+  ]
+}

@@ -1,77 +1,142 @@
-import { Header } from '@/components/Header';
+import { Metadata } from 'next'
+import { Check, ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Precios',
+  description: 'Planes y precios de 2laps. Desde gratis hasta Enterprise. Descubre la visibilidad IA de tu mercado.',
+}
+
+const plans = [
+  {
+    name: 'Gratis',
+    price: '0',
+    description: 'Explora todos los mercados y rankings basicos.',
+    features: [
+      'Acceso a todos los mercados',
+      'Rankings de marcas',
+      'Share of voice basico',
+      'Prompts analizados',
+    ],
+    cta: 'Empieza gratis',
+    href: '/',
+    popular: false,
+  },
+  {
+    name: 'Pro',
+    price: '299',
+    description: 'Tendencias, sentimiento y desglose por modelo de IA.',
+    features: [
+      'Todo en Gratis',
+      'Tendencias mensuales',
+      'Analisis de sentimiento',
+      'Desglose por modelo IA',
+      'Fuentes citadas por IAs',
+      'Alertas de cambios',
+      'Exportar datos CSV',
+    ],
+    cta: 'Empezar con Pro',
+    href: 'https://calendly.com/rodrigo-quesada-trucoytrufa/30min',
+    popular: true,
+  },
+  {
+    name: 'Business',
+    price: '999',
+    description: 'Para equipos que necesitan inteligencia completa.',
+    features: [
+      'Todo en Pro',
+      'Mercados a medida',
+      'Acceso API',
+      'Informes mensuales',
+      'Soporte analista dedicado',
+      'Integracion con herramientas',
+      'Usuarios ilimitados',
+    ],
+    cta: 'Contactar ventas',
+    href: 'https://calendly.com/rodrigo-quesada-trucoytrufa/30min',
+    popular: false,
+  },
+]
 
 export default function PricingPage() {
   return (
-    <>
-      <Header />
-      <main className="relative min-h-screen bg-background">
-        {/* Contenido principal con padding top para el header fijo */}
-        <div className="pt-16">
-          {/* Hero Section */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24">
-            <div className="text-left">
-              <p 
-                className="text-xl md:text-2xl font-normal text-gray-500 mb-2 leading-tight"
-                style={{ fontFamily: "'Switzer', sans-serif" }}
-              >
-                Pricing
-              </p>
-              <h1 
-                className="text-3xl md:text-4xl font-normal text-foreground mb-6 leading-tight"
-                style={{ fontFamily: "'Switzer', sans-serif" }}
-              >
-                Plans that scale with your business
-              </h1>
-              <button className="mt-6 px-6 py-3 text-sm bg-foreground text-background rounded-full hover:scale-105 transition-transform">
-                Download for macOS ↓
-              </button>
-            </div>
-          </div>
-
-          {/* Sección de imagen/componente visual */}
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16">
-            <div className="bg-gray-100 rounded-3xl overflow-hidden shadow-lg" style={{ minHeight: '500px' }}>
-              {/* Contenedor para la imagen o componente interactivo */}
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="bg-white rounded-2xl shadow-xl p-8 m-12 max-w-4xl w-full">
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    </div>
-                    <p className="text-xs text-gray-500 font-medium">Cursor</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
-                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">IN PROGRESS 1</p>
-                        <p className="text-gray-400 text-sm mb-2">Pricing Calculator Tool...</p>
-                        <p className="text-xs text-gray-400">Calculating</p>
-                      </div>
-                    </div>
-
-                    <div className="ml-9 space-y-2">
-                      <h3 className="text-base font-semibold text-foreground">
-                        Custom Pricing Plans
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        Calculate the perfect pricing tier for your organization based on usage patterns, team size, and feature requirements.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div>
+      <div className="border-b border-[#c0c0c0]">
+        <div className="px-4 lg:px-8 text-center py-12">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-2">
+            Planes y Precios
+          </h1>
+          <p className="text-sm text-[#666] max-w-md mx-auto">
+            Empieza gratis. Desbloquea insights premium cuando los necesites.
+          </p>
         </div>
-      </main>
-    </>
-  );
+      </div>
+
+      {/* Plans Grid */}
+      <div className="px-4 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`bg-white rounded-lg p-6 flex flex-col ${
+                plan.popular
+                  ? 'border-2 border-[#c23b4c] relative'
+                  : 'border border-[#c0c0c0]'
+              }`}
+            >
+              {plan.popular && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#c23b4c] text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
+                  Popular
+                </span>
+              )}
+              <h3 className="text-lg font-bold text-[#1a1a1a] mb-1">{plan.name}</h3>
+              <div className="flex items-baseline gap-1 mb-2">
+                <span className="font-mono text-3xl font-bold text-[#1a1a1a]">&euro;{plan.price}</span>
+                {plan.price !== '0' && <span className="text-xs text-[#888]">/mes</span>}
+              </div>
+              <p className="text-xs text-[#888] mb-6">{plan.description}</p>
+
+              <ul className="space-y-2 mb-6 flex-1">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-xs text-[#444]">
+                    <Check className="w-3 h-3 text-emerald-600 mt-0.5 shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={plan.href}
+                target={plan.href.startsWith('http') ? '_blank' : undefined}
+                rel={plan.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={`block text-center px-4 py-2.5 text-sm rounded transition-colors ${
+                  plan.popular
+                    ? 'bg-[#c23b4c] text-white hover:bg-[#a83242]'
+                    : 'bg-[#f5f5f5] text-[#1a1a1a] border border-[#c0c0c0] hover:border-[#c23b4c]/40'
+                }`}
+              >
+                {plan.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Enterprise */}
+        <div className="border border-[#c0c0c0] rounded-lg p-8 max-w-2xl mx-auto text-center">
+          <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">Enterprise</h3>
+          <p className="text-sm text-[#666] mb-4">
+            Incluye estrategia, contenido optimizado para IA (2see), servicio gestionado y analisis a medida.
+          </p>
+          <a
+            href="https://calendly.com/rodrigo-quesada-trucoytrufa/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1a1a1a] text-white text-sm rounded hover:opacity-90 transition-opacity"
+          >
+            Habla con nosotros
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  )
 }

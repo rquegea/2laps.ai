@@ -1,0 +1,110 @@
+{
+  "id": "universidades-ade-madrid",
+  "name": "Universidades ADE Madrid",
+  "country": "ES",
+  "sector": "Educacion",
+  "lastUpdated": "2026-03-24",
+  "promptsTracked": 15,
+  "aiModels": ["chatgpt", "gemini", "perplexity", "claude", "grok", "deepseek"],
+  "prompts": [
+    "¿Cuáles son las mejores universidades para estudiar ADE en Madrid?",
+    "Ranking de escuelas de negocios en Madrid para grado en administración",
+    "¿Dónde estudiar Administración y Dirección de Empresas en Madrid?"
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "brand": "IE University",
+      "logo": "/brands/ie.png",
+      "consensusScore": 92,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 5
+    },
+    {
+      "position": 2,
+      "brand": "ESADE (Madrid)",
+      "logo": "/brands/esade.png",
+      "consensusScore": 85,
+      "mentionedByModels": 5,
+      "trend": "stable",
+      "trendDelta": 1
+    },
+    {
+      "position": 3,
+      "brand": "Comillas ICADE",
+      "logo": "/brands/icade.png",
+      "consensusScore": 81,
+      "mentionedByModels": 6,
+      "trend": "up",
+      "trendDelta": 3
+    },
+    {
+      "position": 4,
+      "brand": "EAE Business School",
+      "logo": "/brands/eae.png",
+      "consensusScore": 68,
+      "mentionedByModels": 4,
+      "trend": "down",
+      "trendDelta": -3
+    },
+    {
+      "position": 5,
+      "brand": "CUNEF Universidad",
+      "logo": "/brands/cunef.png",
+      "consensusScore": 74,
+      "mentionedByModels": 5,
+      "trend": "up",
+      "trendDelta": 7
+    },
+    {
+      "position": 6,
+      "brand": "Universidad Carlos III",
+      "logo": "/brands/uc3m.png",
+      "consensusScore": 77,
+      "mentionedByModels": 6,
+      "trend": "stable",
+      "trendDelta": 2
+    }
+  ],
+  "sovDistribution": [
+    { "brand": "IE University", "sov": 28 },
+    { "brand": "ESADE (Madrid)", "sov": 20 },
+    { "brand": "Comillas ICADE", "sov": 18 },
+    { "brand": "Universidad Carlos III", "sov": 15 },
+    { "brand": "CUNEF Universidad", "sov": 11 },
+    { "brand": "EAE Business School", "sov": 8 }
+  ],
+  "trendOverTime": [
+    { "month": "2025-10", "scores": { "IE University": 88, "ESADE (Madrid)": 84, "Comillas ICADE": 79, "EAE Business School": 70, "CUNEF Universidad": 68, "Universidad Carlos III": 75 } },
+    { "month": "2025-11", "scores": { "IE University": 89, "ESADE (Madrid)": 84, "Comillas ICADE": 79, "EAE Business School": 70, "CUNEF Universidad": 69, "Universidad Carlos III": 76 } },
+    { "month": "2025-12", "scores": { "IE University": 90, "ESADE (Madrid)": 85, "Comillas ICADE": 80, "EAE Business School": 69, "CUNEF Universidad": 71, "Universidad Carlos III": 76 } },
+    { "month": "2026-01", "scores": { "IE University": 91, "ESADE (Madrid)": 85, "Comillas ICADE": 80, "EAE Business School": 69, "CUNEF Universidad": 72, "Universidad Carlos III": 77 } },
+    { "month": "2026-02", "scores": { "IE University": 91, "ESADE (Madrid)": 85, "Comillas ICADE": 81, "EAE Business School": 68, "CUNEF Universidad": 73, "Universidad Carlos III": 77 } },
+    { "month": "2026-03", "scores": { "IE University": 92, "ESADE (Madrid)": 85, "Comillas ICADE": 81, "EAE Business School": 68, "CUNEF Universidad": 74, "Universidad Carlos III": 77 } }
+  ],
+  "sentimentByBrand": [
+    { "brand": "IE University", "positive": 78, "neutral": 17, "negative": 5 },
+    { "brand": "ESADE (Madrid)", "positive": 74, "neutral": 20, "negative": 6 },
+    { "brand": "Comillas ICADE", "positive": 68, "neutral": 25, "negative": 7 },
+    { "brand": "EAE Business School", "positive": 45, "neutral": 35, "negative": 20 },
+    { "brand": "CUNEF Universidad", "positive": 62, "neutral": 28, "negative": 10 },
+    { "brand": "Universidad Carlos III", "positive": 66, "neutral": 26, "negative": 8 }
+  ],
+  "sovByModel": [
+    { "model": "chatgpt", "distribution": { "IE University": 30, "ESADE (Madrid)": 22, "Comillas ICADE": 18, "Universidad Carlos III": 14, "CUNEF Universidad": 10, "EAE Business School": 6 } },
+    { "model": "gemini", "distribution": { "IE University": 27, "ESADE (Madrid)": 20, "Comillas ICADE": 19, "Universidad Carlos III": 16, "CUNEF Universidad": 11, "EAE Business School": 7 } },
+    { "model": "perplexity", "distribution": { "IE University": 29, "ESADE (Madrid)": 21, "Comillas ICADE": 17, "Universidad Carlos III": 15, "CUNEF Universidad": 10, "EAE Business School": 8 } },
+    { "model": "claude", "distribution": { "IE University": 26, "ESADE (Madrid)": 19, "Comillas ICADE": 20, "Universidad Carlos III": 16, "CUNEF Universidad": 12, "EAE Business School": 7 } },
+    { "model": "grok", "distribution": { "IE University": 28, "ESADE (Madrid)": 20, "Comillas ICADE": 18, "Universidad Carlos III": 14, "CUNEF Universidad": 11, "EAE Business School": 9 } },
+    { "model": "deepseek", "distribution": { "IE University": 30, "ESADE (Madrid)": 18, "Comillas ICADE": 17, "Universidad Carlos III": 15, "CUNEF Universidad": 12, "EAE Business School": 8 } }
+  ],
+  "sourcesCited": [
+    { "brand": "IE University", "sources": ["Financial Times Rankings", "QS World University Rankings", "ie.edu"] },
+    { "brand": "ESADE (Madrid)", "sources": ["Financial Times Rankings", "El Mundo (ranking universidades)"] },
+    { "brand": "Comillas ICADE", "sources": ["El Mundo (ranking universidades)", "comillas.edu"] },
+    { "brand": "EAE Business School", "sources": ["eae.es", "Opiniones Google"] },
+    { "brand": "CUNEF Universidad", "sources": ["cunef.edu", "El Confidencial"] },
+    { "brand": "Universidad Carlos III", "sources": ["QS World University Rankings", "uc3m.es", "Shanghai Ranking"] }
+  ]
+}
