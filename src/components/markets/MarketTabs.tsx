@@ -1,4 +1,4 @@
-'use client'
+
 
 import { useState, useRef, useEffect, type ReactNode } from 'react'
 import { Lock, ChevronUp, ChevronDown } from 'lucide-react'

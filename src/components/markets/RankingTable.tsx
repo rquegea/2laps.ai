@@ -1,4 +1,4 @@
-'use client'
+
 
 import { Ranking } from '@/lib/types'
 import { trendArrow } from '@/lib/utils'

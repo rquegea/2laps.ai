@@ -1,4 +1,3 @@
-'use client';
 
 export function MarketConcentration() {
   const value = 1860.62;

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 
 const footerColumns: { title: string | null; links: { label: string; href: string; external?: boolean }[] }[] = [
   {
@@ -83,7 +83,7 @@ export function Footer() {
                         </a>
                       ) : (
                         <Link
-                          href={link.href}
+                          to={link.href}
                           className="text-sm text-[#ccc] hover:text-white transition-colors"
                         >
                           {link.label}
@@ -102,7 +102,7 @@ export function Footer() {
       <div className="border-t border-[#333] px-4 lg:px-8 py-5">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/about" className="text-xs text-[#888] hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/about" className="text-xs text-[#888] hover:text-white transition-colors">Terms of Service</Link>
             <span className="text-xs text-[#888] hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
             <span className="text-xs text-[#888] hover:text-white transition-colors cursor-pointer">Manage Cookies</span>
           </div>

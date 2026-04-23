@@ -1,4 +1,3 @@
-'use client';
 
 import { useState, useRef, useEffect, useCallback, ReactNode, memo } from 'react';
 

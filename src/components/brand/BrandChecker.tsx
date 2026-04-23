@@ -1,7 +1,7 @@
-'use client'
+
 
 import { useState, useMemo } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { Search, ArrowRight } from 'lucide-react'
 
 interface BrandResult {
@@ -50,7 +50,7 @@ export function BrandChecker({ brands }: BrandCheckerProps) {
             results.map((r) => (
               <Link
                 key={`${r.brand}-${r.marketId}`}
-                href={`/market/${r.marketId}`}
+                to={`/market/${r.marketId}`}
                 className="flex items-center justify-between px-4 py-3 hover:bg-[#f5f5f5] transition-colors border-b border-[#eee] last:border-0"
               >
                 <div>
