@@ -3,8 +3,11 @@ import type { ApiMarketListItem, ApiCategoryBundle } from './market-mapper'
 const API_BASE = import.meta.env.VITE_API_URL || ''
 
 async function apiFetch<T>(endpoint: string, options?: RequestInit): Promise<T> {
+  // Only set Content-Type when there's a body — GETs without it count as CORS
+  // "simple requests" so the browser skips preflight against the public API.
+  const method = (options?.method || 'GET').toUpperCase()
   const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
+    ...(method !== 'GET' && method !== 'HEAD' ? { 'Content-Type': 'application/json' } : {}),
     ...((options?.headers as Record<string, string>) || {}),
   }
 
