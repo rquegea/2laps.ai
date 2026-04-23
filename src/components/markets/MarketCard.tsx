@@ -1,6 +1,6 @@
-'use client'
 
-import Link from 'next/link'
+
+import { Link } from 'react-router-dom'
 import { Market } from '@/lib/types'
 import { countryFlag, trendArrow, formatDate } from '@/lib/utils'
 import { motion } from 'framer-motion'
@@ -20,7 +20,7 @@ export function MarketCard({ market, index = 0 }: MarketCardProps) {
       transition={{ delay: index * 0.05, duration: 0.3 }}
     >
       <Link
-        href={`/market/${market.id}`}
+        to={`/market/${market.id}`}
         className="block border border-[#c0c0c0] rounded-lg p-4 hover:border-[#c23b4c]/40 hover:shadow-sm transition-all duration-200 group bg-white"
       >
         {/* Header */}

@@ -1,4 +1,3 @@
-'use client';
 
 import { VisibilityEvolution } from './VisibilityEvolution';
 import { IndustryRanking } from './IndustryRanking';

@@ -1,6 +1,5 @@
-'use client';
 
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 interface NewsItem {
   id: string;
@@ -106,7 +105,7 @@ export function NewsSection() {
                 Breaking
               </span>
             )}
-            <Link href={`/news/${mainNews.slug}`}>
+            <Link to={`/news/${mainNews.slug}`}>
               <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight mb-4 hover:text-[#c23b4c] cursor-pointer transition-colors">
                 {mainNews.headline}
               </h3>
@@ -138,7 +137,7 @@ export function NewsSection() {
             {bottomHeadlines.map((item, idx) => (
               <Link
                 key={item.id}
-                href={`/news/${item.slug}`}
+                to={`/news/${item.slug}`}
                 className={`px-4 lg:px-8 py-5 hover:bg-[#fafafa] transition-colors group ${idx < bottomHeadlines.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#c0c0c0]' : ''}`}
               >
                 <div className="flex items-center gap-2 mb-2.5">

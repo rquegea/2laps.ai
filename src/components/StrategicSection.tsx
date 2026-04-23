@@ -1,4 +1,3 @@
-'use client';
 
 import { memo, useState, useEffect, useRef } from 'react';
 import { InteractiveWindow } from './InteractiveWindow';

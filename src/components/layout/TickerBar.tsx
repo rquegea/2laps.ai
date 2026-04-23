@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { getAllMarkets } from '@/lib/data'
 
 export function TickerBar() {
@@ -28,7 +28,7 @@ export function TickerBar() {
             return (
               <Link
                 key={`${item.brand}-${i}`}
-                href={`/market/${item.slug}`}
+                to={`/market/${item.slug}`}
                 className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-sm text-xs shrink-0 transition-opacity hover:opacity-80 ${
                   isUp
                     ? 'bg-emerald-600 text-white'
