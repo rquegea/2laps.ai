@@ -1,20 +1,9 @@
-'use client'
+
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { Menu, X, Search, ChevronDown } from 'lucide-react'
-
-const marketsSectors = [
-  { label: 'FMCG', sector: 'FMCG' },
-  { label: 'Educacion', sector: 'Educacion' },
-  { label: 'Legal', sector: 'Legal' },
-  { label: 'Finanzas', sector: 'Finanzas' },
-  { label: 'Belleza', sector: 'Belleza' },
-  { label: 'Tech', sector: 'Tecnologia' },
-  { label: 'Turismo', sector: 'Turismo' },
-  { label: 'Restauracion', sector: 'Restauracion' },
-  { label: 'Deporte', sector: 'Deporte' },
-]
+import { usePublicSectors } from '@/hooks/use-public-markets'
 
 const marketsDropdownData = {
   columns: [
@@ -66,13 +55,17 @@ const marketsDropdownData = {
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [marketsOpen, setMarketsOpen] = useState(false)
+  const { sectors: publicSectors } = usePublicSectors()
+  const sectorColumn = publicSectors.length
+    ? publicSectors.map((s) => ({ label: s.label, href: `/markets?sector=${s.sector}` }))
+    : marketsDropdownData.columns[0].links
 
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-border">
       {/* Logo row */}
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-baseline gap-2">
+          <Link to="/" className="flex items-baseline gap-2">
             <span
               className="text-3xl md:text-4xl font-semibold text-foreground"
               style={{ letterSpacing: '-0.03em' }}
@@ -134,11 +127,11 @@ export function Header() {
 
             <span className="text-border pr-3 shrink-0">|</span>
 
-            {/* Sector links */}
-            {marketsSectors.map((item) => (
+            {/* Sector links — driven by queries flagged `es_publico` in admin */}
+            {publicSectors.map((item) => (
               <Link
                 key={item.sector}
-                href={`/markets?sector=${item.sector}`}
+                to={`/markets?sector=${item.sector}`}
                 className="text-sm text-foreground hover:text-accent-red transition-colors pr-4 shrink-0"
               >
                 {item.label}
@@ -148,7 +141,7 @@ export function Header() {
             <span className="text-border pr-3 shrink-0">|</span>
 
             {/* More dropdown */}
-            <Link href="/markets" className="text-sm text-foreground hover:text-accent-red transition-colors shrink-0">
+            <Link to="/markets" className="text-sm text-foreground hover:text-accent-red transition-colors shrink-0">
               Mas <span className="text-[10px] text-muted">&#9662;</span>
             </Link>
           </nav>
@@ -160,14 +153,16 @@ export function Header() {
             <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
               <div className="flex py-1">
                 {/* Columns */}
-                {marketsDropdownData.columns.map((col, colIdx) => (
+                {marketsDropdownData.columns.map((col, colIdx) => {
+                  const links = col.title === 'Sectors' ? sectorColumn : col.links
+                  return (
                   <div key={colIdx} className={`flex-1 px-5 py-5 ${colIdx < marketsDropdownData.columns.length - 1 ? 'border-r border-[#333]' : ''}`}>
                     <h4 className="text-xs font-semibold text-[#888] uppercase tracking-wider mb-3">{col.title}</h4>
                     <ul className="space-y-2">
-                      {col.links.map((link) => (
+                      {links.map((link) => (
                         <li key={link.label}>
                           <Link
-                            href={link.href}
+                            to={link.href}
                             className="text-sm text-[#ccc] hover:text-white transition-colors"
                             onClick={() => setMarketsOpen(false)}
                           >
@@ -177,7 +172,8 @@ export function Header() {
                       ))}
                     </ul>
                   </div>
-                ))}
+                  )
+                })}
 
                 {/* Featured / Top Rankings */}
                 <div className="w-[220px] flex-shrink-0 px-5 py-5 border-l border-[#333] bg-[#141414]">
@@ -199,7 +195,7 @@ export function Header() {
               {/* Bottom bar */}
               <div className="border-t border-[#333] px-5 py-3 flex items-center justify-between">
                 <Link
-                  href="/markets"
+                  to="/markets"
                   className="text-xs text-[#ccc] hover:text-white transition-colors font-medium"
                   onClick={() => setMarketsOpen(false)}
                 >
@@ -220,20 +216,20 @@ export function Header() {
               <span className="w-2 h-2 rounded-full bg-accent-red animate-pulse" />
               Live
             </span>
-            <Link href="/markets" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
+            <Link to="/markets" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
               Mercados
             </Link>
             <div className="pl-3 flex flex-col gap-1 border-l border-border ml-1">
-              {['FMCG', 'Educacion', 'Legal', 'Finanzas', 'Belleza', 'Tech', 'Turismo', 'Restauracion', 'Deporte'].map(s => (
-                <Link key={s} href={`/markets?sector=${s}`} className="text-xs text-muted hover:text-foreground py-1.5" onClick={() => setMenuOpen(false)}>
-                  {s}
+              {publicSectors.map(({ sector, label }) => (
+                <Link key={sector} to={`/markets?sector=${sector}`} className="text-xs text-muted hover:text-foreground py-1.5" onClick={() => setMenuOpen(false)}>
+                  {label}
                 </Link>
               ))}
             </div>
-            <Link href="/pricing" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
+            <Link to="/pricing" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
               Precios
             </Link>
-            <Link href="/about" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
+            <Link to="/about" className="text-sm text-foreground hover:text-accent-red py-2.5 font-medium" onClick={() => setMenuOpen(false)}>
               Sobre 2laps
             </Link>
             <div className="pt-2 mt-2 border-t border-border">
