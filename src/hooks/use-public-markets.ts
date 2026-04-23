@@ -3,23 +3,27 @@ import { publicApi, type PublicMercadoWithCategories, type PublicCategoryListIte
 import { bundleToMarket } from '@/lib/market-mapper'
 import type { Market, Sector } from '@/lib/types'
 
-function mapTipoToSector(tipo: string): Sector {
-  const map: Record<string, Sector> = {
-    FMCG: 'FMCG',
-    Health_Digital: 'Salud',
-    Digital_SaaS: 'Tecnologia',
-    Services: 'Legal',
-  }
-  return map[tipo] || 'Tecnologia'
-}
-
-/** Deduped sectors present in public queries. Drives the top nav. */
+/**
+ * Deduped mercados present in public queries — drives the top nav.
+ *
+ * We use `mercado_nombre` (the exact label from the admin panel) as the
+ * grouping key instead of collapsing tipo_mercado into a hardcoded enum.
+ * This way any mercado the admin creates — "FMCG", "Education Corporate
+ * Training", etc. — appears verbatim as soon as one of its queries is
+ * flagged `es_publico=true`.
+ */
 export function usePublicSectors() {
   const { categories, isLoading, error } = usePublicCategories()
 
-  const sectors = Array.from(
-    new Set(categories.map((c) => mapTipoToSector(c.tipo_mercado)))
-  ).map((sector) => ({ sector, label: sector }))
+  const seen = new Map<number, string>()
+  for (const c of categories) {
+    if (!seen.has(c.mercado_id)) seen.set(c.mercado_id, c.mercado_nombre)
+  }
+  const sectors = Array.from(seen.entries()).map(([mercadoId, nombre]) => ({
+    mercadoId,
+    sector: nombre,
+    label: nombre,
+  }))
 
   return { sectors, isLoading, error }
 }
@@ -42,7 +46,8 @@ export function usePublicCategories() {
           id: String(c.categoria_id),
           name: c.categoria_nombre,
           country: 'España',
-          sector: mapTipoToSector(c.tipo_mercado),
+          // Use mercado_nombre as the filter/group key so the landing matches admin labels 1:1
+          sector: c.mercado_nombre as unknown as Sector,
           lastUpdated: new Date().toISOString(),
           promptsTracked: c.query_count,
           aiModels: [],
